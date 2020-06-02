@@ -1,0 +1,479 @@
+
+
+/* POPUP CREAR */
+@charset "utf-8";
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+.overlay_true {
+    visibility: visible;
+    opacity: 1;
+}
+#popupBody{
+    z-index: 10;
+    width: 46%;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #CCC;
+	background: rgba(56, 56, 56, 0.918);
+	color: rgb(192, 192, 192);
+    position: absolute;
+    transition: all 5s ease-in-out;
+    margin: 20% auto;
+}
+
+.textAlign{
+	text-align: center;
+}
+
+.inputsCreate{
+	text-align: center;
+    margin-top: 10px;
+}
+
+.createForm{ 
+	margin-top: 10px;
+	width: 100%;
+	border-radius: 0px 0px 14px 14px;
+}
+
+.form-control{
+	width: 80%;
+    margin-left: 10%;
+}
+
+#cerrar{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #F00;
+}
+
+/* GRID */
+
+.contenedor {
+	width: 100%;
+	display: grid; /* Contenedor sera de tipo grid */
+	grid-template-columns: repeat(3, 1fr); /*columnas en ancho*/
+	grid-template-rows: repeat(5, auto); /*columnas en largo*/
+
+	grid-template-areas: "header header header"         /*columnas en ancho y largo*/
+						 "lobby lobby lobby"
+						 "nav    nav    sidebar"
+						 "contenido contenido sidebar"  /*contenido es igual a 1 contenido 2 sidebar 3*/
+						 "widget-1 widget-1 sidebar"
+}
+
+/* MEDIA QUERIES */
+
+
+@media screen and (max-width: 700px){
+	.contenedor {
+		grid-template-areas:"header header header"
+							"lobby lobby lobby"
+							"nav nav nav"
+						 	"contenido contenido contenido"
+						 	"widget-1 widget-1 widget-1"
+	}
+	.contenedor .sidebar{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 486px){
+	body{
+		font-size: 10px !important;
+	}
+	.contenido{
+		min-height: 400px !important;
+		max-height: 400px !important;
+	}
+	.sala{
+		margin-bottom: 8px;
+	}
+	*{
+		padding: 0 !important;
+	}
+}
+
+@media screen and (max-width: 278px){
+	body{
+		font-size: 7px !important;
+	}
+	.contenido{
+		min-height: 350px !important;
+		max-height: 350px !important;
+	}
+	.sala{
+		margin-bottom: 9px;
+	}
+}
+
+@media screen and (max-width: 196px){
+	body{
+		font-size: 5px !important;
+
+	}
+	*{
+		padding: 0 !important;
+	}
+	.contenido{
+		min-height: 300px !important;
+		max-height: 300px !important;
+	}
+	.sala{
+		margin-bottom: 10px;
+	}
+}
+
+
+/* BOOTSTRAP */
+.row{
+	margin-right: 0 !important;
+	margin-left: 0 !important
+}
+
+.col{
+	padding-left: 0 !important;
+}
+
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+    width: auto !important;
+}
+
+/* LOBBY */
+.contenedor .lobby{
+	grid-area: lobby;
+	display: flex;
+	padding-left: 7px;
+	align-items: center;
+    height: 30px;
+    background: #242629;
+    color: rgb(255, 255, 255);
+}
+/* NAV */
+.contenedor .nav{
+	color: #fff;
+	min-height: 30px !important;
+	display: block !important;
+	grid-area: nav;
+	background: #212529;
+	cursor: pointer;
+}
+.buttons{
+	border:none;
+	color: white;
+	padding: 0 !important;
+	padding-bottom: 5px !important;
+	padding-left: 5px !important;
+	padding-right: 5px !important;
+	background: #212529;
+	font-size: x-small;
+	border-left: 2px solid rgba(0, 0, 0, 0.788);
+}
+
+.game{
+	margin-left: 30px !important;
+}
+
+.no{
+	border:none;
+}
+
+.gp{
+	margin-left: 32px;
+}
+
+p{
+	margin-bottom: 0 !important;
+}
+/* contenedor */
+.contenedor .contenido {
+	padding: 15px 0 0 0;
+	color: white;
+	background: linear-gradient(45deg, #1b1b1b, #2d2d2d);
+	grid-area: contenido;
+	min-height: 600px;
+}
+.sala{
+	padding-left: 10px !important;
+	padding: 5px 0 5px 0;
+	margin-bottom: 10px;
+	background: #2b2a2a56;
+	height: 27px;
+	cursor: pointer;
+}
+.sala:hover{
+	background: #2221219c;
+}
+.play, .players{
+	padding-left: 20px !important;
+}
+.players{
+	margin-left: 15px;
+}
+.password{
+	width: 20px;
+}
+/* SIDEBAR */
+.contenedor .sidebar {
+	color: white;
+	background: rgb(58, 58, 58);
+	grid-area: sidebar;
+	padding-left: 7px;
+    padding-right: 7px !important;
+	font-size: 17px;
+}
+#sala-info-img{
+	border: rgba(0, 0, 0, 0.308) 2px solid;
+	margin-top: 6px;
+}
+.sala-info-box{
+	padding: 5px 25px 5px 25px !important;
+	background: rgb(27, 27, 27);
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.button {
+	background-color: #d1d1d1;
+    color:black;
+	border-radius: 6px;
+}
+.button:hover{
+	background-color: #a19f9f;
+}
+.arrow, .button{
+	padding: 0px !important;
+    width: 70px;
+    height: 44px;
+    border: none;
+	transition: 0.4s;
+}
+
+.arrow{
+	color: #d1d1d1;
+	background: none;
+}
+
+.arrow:hover{
+	color: #a19f9f;
+}
+/* The container */
+.stalkers {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  }
+
+  /* Hide the browser's default checkbox */
+  .stalkers input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+  }
+
+  /* Create a custom checkbox */
+  .checkmark {
+	margin-left: 40px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #5f5f5f;
+  }
+
+  /* On mouse-over, add a grey background color */
+  .stalkers:hover input ~ .checkmark {
+	background-color:#5f5f5f;
+  }
+  .stalkers input:checked ~ .checkmark {
+	background-color: #5f5f5f;
+  }
+
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+  }
+
+  /* Show the checkmark when checked */
+  .stalkers input:checked ~ .checkmark:after {
+	display: block;
+  }
+
+  /* Style the checkmark/indicator */
+  .stalkers .checkmark:after {
+	left: 9px;
+	top: 5px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	transform: rotate(45deg);
+  }
+
+/* WIDGET-1 */
+.contenedor .widget-1 {
+	margin-right: 0;
+	padding: 9px;
+	background: #232323;
+	color: #fff;
+	min-height: 60px;
+	grid-area: widget-1;
+	margin-left: 0;
+	padding-right: 0 !important;
+}
+.quick {
+  	color: yellow;
+	background-color: #c52232;
+	height: 44px;
+    font-weight: 100;
+	font-size: x-small;
+	transition: 0.3s;
+}
+.quick:hover{
+	box-shadow: 0 0 10px #F44336, 0 0 40px #f43636, 0 0 80px #cc2c20;
+	background-color: #cc2c20;
+	border-radius: 10px;
+    transition-delay: 0.1s;
+}
+.crear{
+	margin-left: 10px !important;
+}
+/* CHATSBOXS */
+.chatsbox {
+	background: #1b1b1b;
+	color: #fff;
+	grid-area: footer-1;
+  	min-height: 200px;
+}
+.chats{
+  background: rgb(27, 27, 27);
+  max-width: 100%;
+  border: 1px solid #0000001a;
+}
+.pride, .todos{
+	transition: background 0.5s;
+	padding-top: 5px;
+	border: 1px solid #000 ;
+	padding-bottom: 5px;
+	min-width: 60px !important;
+}
+
+.todos{ 
+	color: black;
+	background-color: rgb(132, 130, 130);
+}
+.pride{
+	color: white;
+	background-color: #1d1e1a;
+}
+
+.chatbox, .inputbox{
+	color: white;
+	border: none;
+	width: 100%;
+	background: rgb(31, 31, 31);
+}
+
+.inputbox{
+	width: 80%;
+}
+
+#send{
+	position: absolute;
+    background: none;
+    border: none;
+    background: orangered;
+	width: 16.7%;
+}
+
+.chatbox{
+	overflow: auto;
+    height: 147px;
+    background: linear-gradient(180deg,transparent, #1d1d1d);
+}
+	.chats{
+		margin-left: 0 !important;
+	}
+	.chatbox p{
+		margin: 0;
+	}
+
+	.persona_pride{
+		color: #673ab7;
+	}
+	.persona_rival{
+		color: red;
+	}
+	.persona_todos, .me{
+		color: grey;
+	}
+	.selected{
+		background:  #d8a50b;
+	}
+
+* {
+  margin: 0;
+  padding-right: 0 !important;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.users{
+	border: 1px #0000006b solid;
+    height: 177px;
+    color: #8a8787;
+	overflow-y: auto;
+	background: #1b1b1b;
+}
+
+
+.userArr{
+	border-top: 2px rgb(95, 95, 95) solid;
+}
+
+.footer-2{
+	grid-area: footer-2;
+	background: #3d3d3d;
+	color: #fff;
+	grid-area: footer-2;
+ 	min-height: 200px;
+}
+
+.contenedor-chatbox {
+	width: 100%;
+	display: grid; /* Contenedor sera de tipo grid */
+	grid-template-columns: repeat(3, 1fr); /*columnas en ancho*/
+
+	grid-template-areas: "footer-1 footer-1 footer-2";
+}

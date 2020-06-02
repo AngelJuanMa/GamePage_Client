@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding-right: 0 !important;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+@media screen and (max-width: 576px){
+  .none{
+    display:none;
+  }
+  .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+    width: auto;
+}
+}
+
+@media screen and (min-width: 1366px){
+  .large{
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+}
+
+/* HEADER */
+.header {
+	background: #1b1b1b;
+	color: #fff;
+	grid-area: header;
+	height: 70px;
+	padding: 0 !important;
+	margin-right: 0 !important;
+}
+.user{
+	min-width: 60px;
+	min-height: 60px;
+	padding-left: 7px;
+  padding-top: 5px !important;
+  background: linear-gradient(45deg, white, white, white);
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+.ajustar{
+	color: rgb(209, 209, 209);
+	cursor: pointer;
+  padding-top: 20px !important;
+  transition: 0.5s;
+} 
+.ajustar:hover{
+	color: rgb(148, 148, 148);
+}
+.icon{
+  color: white;
+}
+
+body {
+  background-color: rgb(61, 61, 61) !important;
+  position: static;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Mozilla  */
+progress::-moz-progress-bar{
+    background: rgb(170, 169, 169);
+    border-radius : 20px;
+}
+progress::-webkit-progress-value {
+    background: rgb(170, 169, 169);
+    border-radius : 20px;
+}
+progress::-webkit-progress-bar {
+    background-color:rgb(112, 110, 110);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset; /*esta sombra es para simular el borde que he aplicado arriba para Mozilla*/
+    border-radius : 20px ;
+}
+/*  Chrome y Safari */
+progress{
+    /* Elimino la apariencia por defecto */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* Quito el borde que aparece en Firefox */
+    border: none;
+
+    /* Añado mis propios estilos */
+    width: 100px;
+    height: 10px;
+	overflow:hidden;
+
+/*  Estos estilos solo se aplicaran al fondo de la barra en mozilla */
+        border:1px inset #666;
+    background-color:#D8D8D8;
+    border-radius : 20px ;
+}
+
+.gp{
+  margin-left: 6px;
+}
+

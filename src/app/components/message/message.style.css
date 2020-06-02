@@ -1,0 +1,327 @@
+/* POPUP Delete */    
+@charset "utf-8";
+.overlay_Delete {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(150, 150, 150);
+  color: red;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay_true_Delete {
+  visibility: visible;
+  opacity: 1;
+}
+#popupBody_Delete{
+  z-index: 1001;
+  background-color: rgba(0, 0, 0, 0.78);
+  width: 46%;
+  padding: 2%;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-radius: 15px;
+  box-shadow: 0 0 5px #353535;
+  position: absolute;
+  margin: 20% auto;
+}
+#cerrar_Delete{
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #F00;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+  color: black !important;
+}
+.overlay_true {
+  visibility: visible;
+  opacity: 1;
+}
+#popupBody, #popupBody-request, #popupBody-user{
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  top: 70px;
+  right: 0;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 100;
+}
+#popupBody{
+  margin-left:59%;
+}
+#popupBody-user{
+  margin-left:68%;
+  z-index: 103;
+  color: white;
+  height: auto;
+}
+#cerrar{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #F00;
+}
+
+#form-message{
+  display: none;
+}
+
+#popupBody-request{
+  height: 10%;
+  width: 27%;
+  top: 70px !important;
+  left: -325px;
+  z-index: 101 !important;
+  margin-left: 50%;
+}
+#popupBody-request p{
+  color: black !important;
+}
+
+.friends{
+  height: 85%;
+}
+
+.friends .buttonFriend{
+  border-top: none;
+  border-right: 1px solid rgba(128, 128, 128, 0.637);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.637);
+  border-left: 1px solid rgba(128, 128, 128, 0.637);
+  background: none;
+  width: 80%;
+  color: white;
+}
+.friendDelete{
+  border-top: 1px solid rgba(128, 128, 128, 0.637);
+  border-right: 1px solid rgba(128, 128, 128, 0.637);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.637);
+  border-left: none;
+  background: none;
+  width: 20%;
+  color: red;
+}
+.friends #first button:first-child{
+  border-top: 1px solid rgba(128, 128, 128, 0.637) !important;
+}
+.form-add{
+height: 15%;
+}
+.form-add .button-box{
+  border-radius: 0 0 10px 0;
+  width: 30%;
+  background: none;
+  color: rgb(41, 199, 67);
+  border: 1px solid rgba(41, 199, 67, 0.657);
+}
+.form-add .button-box:hover{
+  color: rgb(35, 129, 50);
+  border: 1px solid rgb(35, 129, 50, 0.657);
+}
+.form-add .input-box{
+  border-radius: 0 0 0 10px;
+  background: none;
+  color: white;
+  border: 1px rgb(93, 92, 92) solid;
+  width: 70%;
+  height: 28px;
+}
+.overlay_true{
+  background: rgba(0, 0, 0, 0.92);
+  border-radius: 20px;
+}
+
+.overlay_true #button-request-delete{
+  color: #ff0000fb;
+  border: 1px solid #ff0000fb;
+  text-align: center;
+}
+.overlay_true #user-request{
+  color: white !important;
+  text-align: center;
+}
+.overlay_true #button-request-accept{
+  color: #30b91dfb;
+  border: 1px solid #30b91dfb;
+  text-align: center;
+}
+
+.overlay_true #button-request-accept,
+.overlay_true #button-request-delete{
+  width: 50%;
+  background: none;
+}
+
+#out{
+  color: white;
+  background: none;
+  border: none;
+}
+
+
+.chatbox{
+  height: 350px;
+  overflow-y: auto;
+}
+
+.chatbox .identity{
+  text-align: right;
+  margin-left: auto;
+  background: rgba(34, 90, 65, 0.92);
+  border-radius: 7px;
+  padding-left: 13px;
+  margin-right: 10px;
+  padding-right: 4px;
+}
+
+.chatbox .friend{
+  margin-right: auto;
+  border-radius: 7px;
+  background-color: rgba(104, 103, 103, 0.363);
+  padding-left: 4px;
+  margin-left: 10px;
+  padding-right: 13px;
+}
+
+.chatbox .friend,
+.chatbox .identity{
+  color: white;
+  overflow-y: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+#friends, #delete{
+  color: white;
+  width: 100%;
+  background: none;
+  border: none;
+}
+
+#friends{
+  text-align: center;
+  color: #1dad78;
+}
+
+#usuario{
+  text-align: center;
+  color: #17a2b8;
+}
+
+#nick::before{
+  color: #1dad78;
+  content: "NICK: ";
+}
+
+#email::before{
+  color: forestgreen;
+  content: "EMAIL: ";
+}
+
+#description::before{
+  color: #6610f2;
+  content: "DESCRIPCIÓN: ";
+}
+
+#nivel::before{
+  color: aqua;
+  content: "NIVEL: ";
+}
+
+.error{
+  color: #F00;
+  width: 262px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.formularioErr:before{
+  content: '';
+  position: absolute;
+  right: 12px;
+  left: 156px;
+  width: 19px;
+  bottom: 5px;
+  height: 19px;
+  background: url(../../../assets/invalid.png);
+  background-size: cover;
+  z-index: 1000;
+}
+
+.formularioSuc:before{
+  content: '';
+  position: absolute;
+  right: 12px;
+  left: 156px;
+  width: 19px;
+  bottom: 5px;
+  height: 19px;
+  background: url(../../../assets/valid.png);
+  background-size: cover;
+  z-index: 1000;
+}
+
+#formMessages{
+  width: 245px;
+  height: 36px;
+  display: inline-flex;
+}
+
+.inputWriteMessage{
+  border-radius: 1000px;
+  width: 87%;
+  font-size: 15px;
+  border: none;
+  background: #272727;
+  color: white;
+  padding-left: 7px;
+}
+
+.formSubmitMessage{
+  color: #fff;
+  width: 16%;
+  border-radius: 1000px;
+  border: none;
+  background-color: #28a745;
+}
+
+#deleteFriend{
+  width: 50%;
+  background: none;
+  color: white;
+  border: 2px solid #ab3f3f;
+}
+
+#cancel{
+  width: 50%;
+  border: 2px solid #1f8d98;
+  background: none;
+  color: white;
+}
+
+.noviewed{
+  color: rgb(148, 148, 148);
+}
+
+.viewed{
+  color: #28a745;
+}

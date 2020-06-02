@@ -1,0 +1,112 @@
+<div class="contenedor">
+<div  class="lobby">SALA</div>
+    <nav class="nav">
+        <div class="row ref">
+            <div class="col-6"> </div>
+            <div>
+                <i class="fas fa-exchange-alt fa-2x"></i>
+            </div>
+            <div class="col-6"></div>
+        </div>
+    </nav>
+        <main class="contenido">
+            <div class="row sala">
+                <span class="col sala-userr"> 
+                    <span *ngIf="sala.red_1">
+                        <span class="icon" [ngSwitch]="ranking[0]">
+                            <span *ngSwitchCase="4">  <i #red1 class="fas fa-user user "></i></span>
+                            <span *ngSwitchCase="6">  <i #red1 class="fas fa-user-injured user fa"></i></span>
+                            <span *ngSwitchCase="12"> <i #red1 class="fas fa-user-tie user fa"></i></span>
+                            <span *ngSwitchCase="17"> <i #red1 class="fas fa-user-secret user fa"></i></span>
+                            <span *ngSwitchCase="21"> <i #red1 class="fas fa-user-ninja user fa"></i></span>
+                            <span *ngSwitchCase="27"> <i #red1 class="fas fa-user-astronaut user fa-2x"></i></span>
+                        </span>
+                        <span class="margin" style="margin-left: 10px;"> {{sala.red_1.nick}} </span>
+                        <span *ngIf="sala.master._id == sala.red_1._id">
+                            <i class="fas fa-crown corona"></i>
+                        </span> 
+                    </span>
+                </span>
+                <span class="col sala-userb"> 
+                    <span *ngIf="sala.blue_1">
+                        <span class="icon" [ngSwitch]="ranking[3]">
+                            <span *ngSwitchCase="4"><i class="fas fa-user user fa"></i></span>
+                            <span *ngSwitchCase="6"><i class="fas fa-user-injured user fa"></i></span>
+                            <span *ngSwitchCase="12"><i class="fas fa-user-tie user fa"></i></span>
+                            <span *ngSwitchCase="17"><i class="fas fa-user-secret user fa"></i></span>
+                            <span *ngSwitchCase="21"><i class="fas fa-user-ninja user fa"></i></span>
+                            <span *ngSwitchCase="27"><i class="fas fa-user-astronaut user fa"></i></span>
+                        </span>
+                        <span class="margin"> {{sala.blue_1.nick}}</span> 
+                        <span *ngIf="sala.master._id == sala.blue_1._id">
+                            <i class="fas fa-crown corona"></i>
+                        </span> 
+                    </span>
+                </span>
+            </div>
+            <div style="margin-top: 15px;" class="row sala">
+                <span class="col sala-userr"> 
+                    <span *ngIf="sala.red_2">
+                        <span class="icon" [ngSwitch]="ranking[2]">
+                            <span *ngSwitchCase="4"><i class="fas fa-user user fa"></i></span>
+                            <span *ngSwitchCase="6"><i class="fas fa-user-injured user fa"></i></span>
+                            <span *ngSwitchCase="12"><i class="fas fa-user-tie user fa"></i></span>
+                            <span *ngSwitchCase="17"><i class="fas fa-user-secret user fa"></i></span>
+                            <span *ngSwitchCase="21"><i class="fas fa-user-ninja user fa"></i></span>
+                            <span *ngSwitchCase="27"><i class="fas fa-user-astronaut user fa"></i></span>
+                        </span>
+                        <span class="margin">{{sala.red_2.nick}}</span>
+                        <span *ngIf="sala.master._id == sala.red_2._id">
+                            <i class="fas fa-crown corona"></i>
+                        </span> 
+                    </span>
+                </span>
+                <span class="col sala-userb"> 
+                    <span *ngIf="sala.blue_2">
+                        <span class="icon" [ngSwitch]="ranking[4]">
+                            <span *ngSwitchCase="4"><i class="fas fa-user user fa"></i></span>
+                            <span *ngSwitchCase="6"><i class="fas fa-user-injured user fa"></i></span>
+                            <span *ngSwitchCase="12"><i class="fas fa-user-tie user fa"></i></span>
+                            <span *ngSwitchCase="17"><i class="fas fa-user-secret user fa"></i></span>
+                            <span *ngSwitchCase="21"><i class="fas fa-user-ninja user fa"></i></span>
+                            <span *ngSwitchCase="27"><i class="fas fa-user-astronaut user fa"></i></span>
+                        </span>
+                        <span  class="margin">{{sala.blue_2.nick}}</span> 
+                        <span *ngIf="sala.master._id == sala.blue_2._id">
+                            <i class="fas fa-crown corona"></i>
+                        </span> 
+                    </span>
+                </span>
+            </div>
+         </main>
+        <aside class="sidebar">
+            <div class="sidebar-content">
+            <div class="row title">
+                    <div > TITULO <span class="sala-info-box" >|{{sala.num}}| {{sala.name}}</span></div>
+                    <div class=" sala-width"> CONTRASEÑA <span class="sala-info-box">****</span></div>
+            </div>
+                <p>JUEGO <span >{{sala.game}}</span> JUGADORES <span >2/2</span></p>
+                <p>RONDAS <span >12</span > TIEMPO <span >12 seg</span></p>
+                <p>RANGO <span>1-12</span> ESTILO <span >Clasic</span></p>
+                <p>OBSERVADORES <label class="container">
+                    <input type="checkbox" checked="checked">
+                    </label>
+                </p>
+                
+            <div class="row ">
+               <div class="col-4"></div> <button class="col-2">CANCELAR</button><button class="col-2">ACEPTAR</button><button class="col-2">OPCIONES</button>
+            </div>
+            </div>
+        </aside>
+        <div class="widget-1">
+        </div>
+        <div class="widget-2">
+        </div>
+        <div class="row start-menu">
+            <div class="col-8"></div>
+            <button class="col-1 flex button">OBSERVAR</button>
+            <button class="col-1 flex button">INVITAR</button>
+            <button class="col-1 button start">INICIAR EL JUEGO</button>
+            
+          </div></div>
+          <app-chatbox></app-chatbox>

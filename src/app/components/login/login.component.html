@@ -1,0 +1,22 @@
+<div class="container">
+ <p *ngIf="message" class="message">{{message}}</p>
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="formulario">
+	<h1>Login</h1>
+	 <div class="contenedor">
+		 <div class="input-contenedor">
+		 <i class="fas fa-envelope icon"></i>
+     <input type="text" name="email" placeholder="Correo electrónico" autocorrect="off" maxlength="75"
+     [class.error]="!email.valid && email.touched || status == 'error'" #email="ngModel" [(ngModel)]="user.email"
+       class="form-control" required  />
+		 </div>
+		 <div class="input-contenedor">
+		<i class="fas fa-key icon"></i>
+    <input type="password" placeholder="Contraseña" autocomplete="false"
+    [class.error]="!password.valid && password.touched || status == 'error'" name="password"
+     #password="ngModel" [(ngModel)]="user.password" class="form-control" required />
+		 </div>
+		 <input type="submit" value="Iniciar sesión" class="button-login btn btn-success"
+		 [ngClass]="{'animate': loginForm.form.valid}"  [disabled]="!loginForm.form.valid" />
+		 <p>¿No tienes una cuenta? <a class="link" href="registro">Registrate </a></p>
+	 </div>
+   </form>

@@ -1,0 +1,25 @@
+
+#tablero {
+	height: 248px;
+	width: 248px;
+	margin: 30px auto;
+    }
+	
+.celda {
+    
+    float: left;
+    background: #fff;
+	height: 80px;
+	width: 80px;
+	border: solid 1px gray;
+    font-size: 20pt;
+    text-align: center;
+	}
+
+/* clear para los floats */
+
+#tablero:after {
+    display: block;
+    content: "";
+    clear: both;
+}

@@ -1,0 +1,93 @@
+.overlay_true {
+  position: absolute;
+  bottom: 0;
+  visibility: visible;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.671);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 20%;
+  text-align: center;
+  z-index: 100;
+  top: 70px;
+  margin: 0 auto;
+  margin-left: 80%;
+}
+
+#delete{
+  color: #dc3545;
+  background: none;
+  border: 1px solid #c22131;
+}
+
+#delete:hover{
+  color: #bd1e2e;
+  border: 1px solid #a01724;
+}
+
+.prideName{
+  text-align: center;
+  color: rgb(218, 218, 27);
+}
+
+#pride{
+  text-align: center;
+  color: rebeccapurple;
+}
+
+.input, .inputSend{
+  background: none;
+  color: white;
+}
+
+.input{
+  width: 100%;
+  border: 1px rgb(90, 90, 90) solid;
+}
+
+.inputSend{
+  width: 100%;
+  border: 1px green solid;
+}
+
+.users, .apply{
+  background: none;
+  color: white;
+  border: 1px rgb(83, 83, 83) solid;
+}
+
+.request{
+  border-radius: 4px;
+  position: absolute;
+  top: 100px;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 10;
+  width: 250px;
+}
+
+#applyR, #deleteR{
+  background: none;
+  border-radius: 5px;
+  width: 50%;
+}
+
+#applyR{
+  color: rgb(20, 160, 20);
+  border: 1px rgb(20, 160, 20) solid;
+}
+
+#deleteR{
+  color: rgb(255, 7, 7);
+  border: 1px rgb(179, 20, 20) solid;
+}
+
+#applyR:hover{
+  color: rgb(7, 70, 7);
+  border: 1px rgb(7, 70, 7) solid;
+}
+
+#deleteR:hover{
+  color: rgb(104, 14, 14);
+  border: 1px rgb(104, 14, 14) solid;
+}

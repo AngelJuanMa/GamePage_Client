@@ -1,0 +1,36 @@
+<div *ngIf="popupUpdate" class="overlay_true popupBody">
+    <span style="color: red;">{{error}}</span>
+    <form #updateForm="ngForm" (ngSubmit)="onSubmit()" >
+        
+        <label for="nick">Nick</label>
+        <input name="nick" class="input" #nick="ngModel" type="text" 
+        [(ngModel)]="user.nick" [class.error]="!nick.valid && nick.touched">
+        <br>
+
+        <label for="color">Color de Usuario 1</label>
+        <input name="color" class="input" #color="ngModel" type="color" 
+        [(ngModel)]="user.color" [class.error]="!color.valid && color.touched">
+        <br>
+
+        <label for="color2">Color de Usuario 2</label>
+        <input name="color2" class="input" #color2="ngModel" type="color" 
+        [(ngModel)]="user.color2" [class.error]="!color2.valid && color2.touched">
+        <br>
+
+        <label for="color3">Color de Usuario 3</label>
+        <input name="color3" class="input" #color3="ngModel" type="color" 
+        [(ngModel)]="user.color3" [class.error]="!color3.valid && color3.touched">
+        <br>
+
+        <label for="deg">Grados de los colores</label>
+        <input name="deg" class="input" #deg="ngModel" type="number" 
+        [(ngModel)]="user.deg" [class.error]="!deg.valid && deg.touched">
+        <br>
+        
+        <label for="description">Descripción</label>
+        <input name="description" class="input" #description="ngModel" type="text" 
+        [(ngModel)]="user.description" [class.error]="!description.valid && description.touched">
+        
+        <input type="submit" class="inputSend" value="CAMBIAR" [disabled]="!updateForm.form.valid"/>
+    </form>
+</div>

@@ -1,0 +1,33 @@
+
+
+	<form #moverForm="ngForm" (ngSubmit)="onSubmit(moverForm)" class="col-lg-12">
+		<section id="tablero">
+		<div class="celda" name="tabla" ngDefaultControl [(ngModel)]="mover.campo" value="a1" (click)="onSubmit('a1')"  >
+		<p  id="a1"></p>
+		</div>
+		<div class="celda"  name="tabla" ngDefaultControl [(ngModel)]="mover.campo" value="a1" (click)="onSubmit('a2')"  >
+		<p id="a2"></p>
+	    </div>
+		<div class="celda" name="tabla" ngDefaultControl [(ngModel)]="mover.campo" value="a1" (click)="onSubmit('a3')"  >
+		<p  id="a3"></p>
+        </div>
+		<div class="celda"  name="tabla" ngDefaultControl [(ngModel)]="mover.campo" value="a1" (click)="onSubmit('b1')">
+		<p id="b1"></p>
+	    </div>
+		<div class="celda"  name="tabla" ngDefaultControl [(ngModel)]="mover.campo" value="a1" (click)="onSubmit('b2')">
+		<p id="b2"></p>
+	    </div>
+		<div class="celda"  name="tabla" ngDefaultControl [(ngModel)]="mover.campo" value="a1" (click)="onSubmit('b3')">
+		<p id="b3"></p>
+	    </div>
+		<div class="celda"  name="tabla" ngDefaultControl [(ngModel)]="mover.campo" value="a1" (click)="onSubmit('c1')" >
+		<p id="c1"></p>
+	    </div>
+		<div class="celda"  name="tabla" ngDefaultControl [(ngModel)]="mover.campo" value="a1" (click)="onSubmit('c2')"  >
+		<p id="c2"></p>
+		</div>
+		<div class="celda"  name="tabla" ngDefaultControl [(ngModel)]="mover.campo" value="a1" (click)="onSubmit('c3')" > 
+		<p id="c3"></p>
+		</div>
+		</section>
+	</form>
