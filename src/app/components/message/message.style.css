@@ -1,4 +1,4 @@
-/* POPUP Delete */    
+/* POPUP Delete */
 @charset "utf-8";
 .overlay_Delete {
   position: fixed;
@@ -15,7 +15,7 @@
   visibility: visible;
   opacity: 1;
 }
-#popupBody_Delete{
+#popupBody_Delete {
   z-index: 1001;
   background-color: rgba(0, 0, 0, 0.78);
   width: 46%;
@@ -28,14 +28,14 @@
   position: absolute;
   margin: 20% auto;
 }
-#cerrar_Delete{
+#cerrar_Delete {
   position: absolute;
   top: 20px;
   right: 30px;
   font-size: 30px;
   font-weight: bold;
   text-decoration: none;
-  color: #F00;
+  color: #f00;
 }
 
 .overlay {
@@ -52,7 +52,9 @@
   visibility: visible;
   opacity: 1;
 }
-#popupBody, #popupBody-request, #popupBody-user{
+#popupBody,
+#popupBody-request,
+#popupBody-user {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -62,30 +64,30 @@
   position: absolute;
   z-index: 100;
 }
-#popupBody{
-  margin-left:59%;
+#popupBody {
+  margin-left: 59%;
 }
-#popupBody-user{
-  margin-left:68%;
+#popupBody-user {
+  margin-left: 68%;
   z-index: 103;
   color: white;
   height: auto;
 }
-#cerrar{
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #F00;
+#cerrar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #f00;
 }
 
-#form-message{
+#form-message {
   display: none;
 }
 
-#popupBody-request{
+#popupBody-request {
   height: 10%;
   width: 27%;
   top: 70px !important;
@@ -93,15 +95,15 @@
   z-index: 101 !important;
   margin-left: 50%;
 }
-#popupBody-request p{
+#popupBody-request p {
   color: black !important;
 }
 
-.friends{
+.friends {
   height: 85%;
 }
 
-.friends .buttonFriend{
+.friends .buttonFriend {
   border-top: none;
   border-right: 1px solid rgba(128, 128, 128, 0.637);
   border-bottom: 1px solid rgba(128, 128, 128, 0.637);
@@ -110,7 +112,7 @@
   width: 80%;
   color: white;
 }
-.friendDelete{
+.friendDelete {
   border-top: 1px solid rgba(128, 128, 128, 0.637);
   border-right: 1px solid rgba(128, 128, 128, 0.637);
   border-bottom: 1px solid rgba(128, 128, 128, 0.637);
@@ -119,24 +121,24 @@
   width: 20%;
   color: red;
 }
-.friends #first button:first-child{
+.friends #first button:first-child {
   border-top: 1px solid rgba(128, 128, 128, 0.637) !important;
 }
-.form-add{
-height: 15%;
+.form-add {
+  height: 15%;
 }
-.form-add .button-box{
+.form-add .button-box {
   border-radius: 0 0 10px 0;
   width: 30%;
   background: none;
   color: rgb(41, 199, 67);
   border: 1px solid rgba(41, 199, 67, 0.657);
 }
-.form-add .button-box:hover{
+.form-add .button-box:hover {
   color: rgb(35, 129, 50);
   border: 1px solid rgb(35, 129, 50, 0.657);
 }
-.form-add .input-box{
+.form-add .input-box {
   border-radius: 0 0 0 10px;
   background: none;
   color: white;
@@ -144,45 +146,44 @@ height: 15%;
   width: 70%;
   height: 28px;
 }
-.overlay_true{
+.overlay_true {
   background: rgba(0, 0, 0, 0.92);
   border-radius: 20px;
 }
 
-.overlay_true #button-request-delete{
+.overlay_true #button-request-delete {
   color: #ff0000fb;
   border: 1px solid #ff0000fb;
   text-align: center;
 }
-.overlay_true #user-request{
+.overlay_true #user-request {
   color: white !important;
   text-align: center;
 }
-.overlay_true #button-request-accept{
+.overlay_true #button-request-accept {
   color: #30b91dfb;
   border: 1px solid #30b91dfb;
   text-align: center;
 }
 
 .overlay_true #button-request-accept,
-.overlay_true #button-request-delete{
+.overlay_true #button-request-delete {
   width: 50%;
   background: none;
 }
 
-#out{
+#out {
   color: white;
   background: none;
   border: none;
 }
 
-
-.chatbox{
+.chatbox {
   height: 350px;
   overflow-y: auto;
 }
 
-.chatbox .identity{
+.chatbox .identity {
   text-align: right;
   margin-left: auto;
   background: rgba(34, 90, 65, 0.92);
@@ -192,7 +193,7 @@ height: 15%;
   padding-right: 4px;
 }
 
-.chatbox .friend{
+.chatbox .friend {
   margin-right: auto;
   border-radius: 7px;
   background-color: rgba(104, 103, 103, 0.363);
@@ -202,7 +203,7 @@ height: 15%;
 }
 
 .chatbox .friend,
-.chatbox .identity{
+.chatbox .identity {
   color: white;
   overflow-y: auto;
   width: -webkit-fit-content;
@@ -210,52 +211,53 @@ height: 15%;
   width: fit-content;
 }
 
-#friends, #delete{
+#friends,
+#delete {
   color: white;
   width: 100%;
   background: none;
   border: none;
 }
 
-#friends{
+#friends {
   text-align: center;
   color: #1dad78;
 }
 
-#usuario{
+#usuario {
   text-align: center;
   color: #17a2b8;
 }
 
-#nick::before{
+#nick::before {
   color: #1dad78;
   content: "NICK: ";
 }
 
-#email::before{
+#email::before {
   color: forestgreen;
   content: "EMAIL: ";
 }
 
-#description::before{
+#description::before {
   color: #6610f2;
   content: "DESCRIPCIÓN: ";
 }
 
-#nivel::before{
+#nivel::before {
   color: aqua;
   content: "NIVEL: ";
 }
 
-.error{
-  color: #F00;
+.error {
+  color: #f00;
   width: 262px;
   font-size: 15px;
   text-align: center;
 }
 
-.formularioErr:before{
-  content: '';
+.formularioErr:before {
+  content: "";
   position: absolute;
   right: 12px;
   left: 156px;
@@ -267,8 +269,8 @@ height: 15%;
   z-index: 1000;
 }
 
-.formularioSuc:before{
-  content: '';
+.formularioSuc:before {
+  content: "";
   position: absolute;
   right: 12px;
   left: 156px;
@@ -280,13 +282,13 @@ height: 15%;
   z-index: 1000;
 }
 
-#formMessages{
+#formMessages {
   width: 245px;
   height: 36px;
   display: inline-flex;
 }
 
-.inputWriteMessage{
+.inputWriteMessage {
   border-radius: 1000px;
   width: 87%;
   font-size: 15px;
@@ -296,7 +298,7 @@ height: 15%;
   padding-left: 7px;
 }
 
-.formSubmitMessage{
+.formSubmitMessage {
   color: #fff;
   width: 16%;
   border-radius: 1000px;
@@ -304,24 +306,24 @@ height: 15%;
   background-color: #28a745;
 }
 
-#deleteFriend{
+#deleteFriend {
   width: 50%;
   background: none;
   color: white;
   border: 2px solid #ab3f3f;
 }
 
-#cancel{
+#cancel {
   width: 50%;
   border: 2px solid #1f8d98;
   background: none;
   color: white;
 }
 
-.noviewed{
+.noviewed {
   color: rgb(148, 148, 148);
 }
 
-.viewed{
+.viewed {
   color: #28a745;
 }

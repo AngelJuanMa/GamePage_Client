@@ -1,468 +1,538 @@
-*{
-    color: white;
+* {
+  color: white;
 }
 /* POPUP CREAR */
 .overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    transition: opacity 500ms;
-    visibility: hidden;
-    opacity: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
 }
 .overlay_true {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
-#popupBody{
-    width: 46%;
-    padding: 2%;
-    border-radius: 0.9375rem;
-    box-shadow: 0 0 0.3125rem #CCC;
-    background: #FFF;
-    position: relative;
-    transition: all 5s ease-in-out;
-    margin: 20% auto;    
+#popupBody {
+  width: 46%;
+  padding: 2%;
+  border-radius: 0.9375rem;
+  box-shadow: 0 0 0.3125rem #ccc;
+  background: #fff;
+  position: relative;
+  transition: all 5s ease-in-out;
+  margin: 20% auto;
 }
-#cerrar{
-    position: absolute;
-    top: 1.25rem;
-    right: 1.875rem;
-    transition: all 200ms;
-    font-size: 1.875rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: #F00;
+#cerrar {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.875rem;
+  transition: all 200ms;
+  font-size: 1.875rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #f00;
 }
 
 /* GRID */
 
 .contenedor {
-	width: 100%;
-	display: grid; /* Contenedor sera de tipo grid */
-	grid-template-columns: repeat(3, 1fr); /*columnas en ancho*/
-	grid-template-rows: repeat(8, auto); /*columnas en largo*/
+  width: 100%;
+  display: grid; /* Contenedor sera de tipo grid */
+  grid-template-columns: repeat(3, 1fr); /*columnas en ancho*/
+  grid-template-rows: repeat(8, auto); /*columnas en largo*/
 
-	grid-template-areas: "header header header"         /*columnas en ancho y largo*/
-						 "lobby lobby lobby"
-						 "nav    nav    sidebar"
-						 "contenido contenido sidebar"  /*contenido es igual a 1 contenido 2 sidebar 3*/
-						 "contenido contenido sidebar"
-						 "contenido contenido widget-1"
-						 "start-menu start-menu widget-1"
-						 "chatbox chatbox stalker";  
+  grid-template-areas:
+    "header header header" /*columnas en ancho y largo*/
+    "lobby lobby lobby"
+    "nav    nav    sidebar"
+    "contenido contenido sidebar" /*contenido es igual a 1 contenido 2 sidebar 3*/
+    "contenido contenido sidebar"
+    "contenido contenido widget-1"
+    "start-menu start-menu widget-1"
+    "chatbox chatbox stalker";
 }
- 
+
 /* MEDIA QUERIES */
 
-@media screen and (min-width: 900px){
-	.flex{
-		flex: 0 !important
-	}
-} 
-
-@media screen and (max-width: 486px){
-	body{
-		font-size: 0.625rem !important;
-	}
-	.contenido{
-		min-height: 25rem !important;
-		max-height: 25rem !important;
-	}
-	.sala{
-		margin-bottom: 0.5rem;
-	}
-	*{
-		padding: 0 !important;
-	}
+@media screen and (min-width: 900px) {
+  .flex {
+    flex: 0 !important;
+  }
 }
 
-@media screen and (max-width: 278px){
-	body{
-		font-size: 0.4375rem !important;
-	}
-	.contenido{
-		min-height: 21.875rem !important;
-		max-height: 21.875rem !important;
-	}
-	.sala{
-		margin-bottom: 0.5625rem;
-	}
-} 
+@media screen and (max-width: 486px) {
+  body {
+    font-size: 0.625rem !important;
+  }
+  .contenido {
+    min-height: 25rem !important;
+    max-height: 25rem !important;
+  }
+  .sala {
+    margin-bottom: 0.5rem;
+  }
+  * {
+    padding: 0 !important;
+  }
+}
 
-@media screen and (max-width: 196px){
-	body{
-		font-size: 0.3125rem !important;
-		
-	}
-	*{
-		padding: 0 !important;
-	}
-	.contenido{
-		min-height: 18.75rem !important;
-		max-height: 18.75rem !important;
-	}
-	.sala{
-		margin-bottom: 0.625rem;
-	}
-} 
+@media screen and (max-width: 278px) {
+  body {
+    font-size: 0.4375rem !important;
+  }
+  .contenido {
+    min-height: 21.875rem !important;
+    max-height: 21.875rem !important;
+  }
+  .sala {
+    margin-bottom: 0.5625rem;
+  }
+}
 
+@media screen and (max-width: 196px) {
+  body {
+    font-size: 0.3125rem !important;
+  }
+  * {
+    padding: 0 !important;
+  }
+  .contenido {
+    min-height: 18.75rem !important;
+    max-height: 18.75rem !important;
+  }
+  .sala {
+    margin-bottom: 0.625rem;
+  }
+}
 
 /* BOOTSTRAP */
-.row{
-	margin-right: 0 !important;
-	margin-left: 0 !important
+.row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
 }
 
-.col{
-	padding-left: 0 !important;
+.col {
+  padding-left: 0 !important;
 }
 
-.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
-    width: auto !important;
+.col,
+.col-1,
+.col-10,
+.col-11,
+.col-12,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-auto,
+.col-lg,
+.col-lg-1,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-auto,
+.col-md,
+.col-md-1,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-auto,
+.col-sm,
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-auto,
+.col-xl,
+.col-xl-1,
+.col-xl-10,
+.col-xl-11,
+.col-xl-12,
+.col-xl-2,
+.col-xl-3,
+.col-xl-4,
+.col-xl-5,
+.col-xl-6,
+.col-xl-7,
+.col-xl-8,
+.col-xl-9,
+.col-xl-auto {
+  width: auto !important;
 }
 
 /* SALA */
-.contenedor .lobby{
-	font-weight: bolder;
-	grid-area: lobby;
-	display: flex;
-	padding-left: 0.4375rem;
-	align-items: center;
-    height: 1.875rem;
-    background: rgba(29, 29, 29, 1);;
-    color: rgb(255, 255, 255);
+.contenedor .lobby {
+  font-weight: bolder;
+  grid-area: lobby;
+  display: flex;
+  padding-left: 0.4375rem;
+  align-items: center;
+  height: 1.875rem;
+  background: rgba(29, 29, 29, 1);
+  color: rgb(255, 255, 255);
 }
 /* NAV */
-.contenedor .nav{
-	color: #fff;
-	min-height: 3rem !important;
-	display: block !important;
-	grid-area: nav;
-	background: #9aa3a5f7;
-	cursor: pointer;
+.contenedor .nav {
+  color: #fff;
+  min-height: 3rem !important;
+  display: block !important;
+  grid-area: nav;
+  background: #9aa3a5f7;
+  cursor: pointer;
 }
-.buttons{
-	border:none;
-	padding: 0 !important;
-	padding-bottom: 0.5625rem !important;
-	padding-left: 0.3125rem !important;
-	background: #9aa3a5f7;
-	border-left: 0.125rem solid rgba(0, 0, 0, 0.788);
-}
-
-.game{
-	margin-left: 1.875rem !important;
+.buttons {
+  border: none;
+  padding: 0 !important;
+  padding-bottom: 0.5625rem !important;
+  padding-left: 0.3125rem !important;
+  background: #9aa3a5f7;
+  border-left: 0.125rem solid rgba(0, 0, 0, 0.788);
 }
 
-.no{
-	border:none;
+.game {
+  margin-left: 1.875rem !important;
 }
 
-.gp{
-	margin-left: 2rem;
+.no {
+  border: none;
 }
 
-p{
-	margin-bottom: 0 !important;
+.gp {
+  margin-left: 2rem;
+}
+
+p {
+  margin-bottom: 0 !important;
 }
 /* CONTENIDO */
 .contenedor .contenido {
-	padding: 0.9375rem 0 0 0;
-	background: #242424;
-	color: white;
-	grid-area: contenido;
-	min-height: 37.5rem;
-	background: linear-gradient(40deg, black, #3c3c3a, black)
+  padding: 0.9375rem 0 0 0;
+  background: #242424;
+  color: white;
+  grid-area: contenido;
+  min-height: 37.5rem;
+  background: linear-gradient(40deg, black, #3c3c3a, black);
 }
-.sala{
-	padding-left: 0.625rem !important;
-	padding: 0.3125rem 0 0.3125rem 0;
-	margin-bottom: 0.625rem;	
-	height: 1.6875rem;
-	cursor: pointer;
+.sala {
+  padding-left: 0.625rem !important;
+  padding: 0.3125rem 0 0.3125rem 0;
+  margin-bottom: 0.625rem;
+  height: 1.6875rem;
+  cursor: pointer;
 }
-.play, .players{
-	padding-left: 1.25rem !important;
+.play,
+.players {
+  padding-left: 1.25rem !important;
 }
-.players{
-	margin-left: 0.9375rem;
+.players {
+  margin-left: 0.9375rem;
 }
-.password{
-	width: 1.25rem;
+.password {
+  width: 1.25rem;
 }
-.sala-userr, .sala-userb{
-	height: 38px;
-	padding: 0.15rem;
-	background: #070707; 
-	margin-bottom: 1.875rem;
+.sala-userr,
+.sala-userb {
+  height: 38px;
+  padding: 0.15rem;
+  background: #070707;
+  margin-bottom: 1.875rem;
 }
-.sala-userr{
-	width: 100px !important;
+.sala-userr {
+  width: 100px !important;
 }
 
-.sala-userb{
-	width: 66px !important;
-	margin-left: 0.625rem;
-	margin-right: 0.625rem;
+.sala-userb {
+  width: 66px !important;
+  margin-left: 0.625rem;
+  margin-right: 0.625rem;
 }
-.sala .col{
-	flex-basis: initial !important;
-	padding-left: inherit !important;
+.sala .col {
+  flex-basis: initial !important;
+  padding-left: inherit !important;
 }
 /* SIDEBAR */
 .contenedor .sidebar {
-	color: white;
-	background: rgb(29, 29, 29, 1);
-	height: 31.25rem;
-	grid-area: sidebar;
-	padding-left: 0.4375rem;
-	font-size: 0.8125rem;
+  color: white;
+  background: rgb(29, 29, 29, 1);
+  height: 31.25rem;
+  grid-area: sidebar;
+  padding-left: 0.4375rem;
+  font-size: 0.8125rem;
 }
-.contenedor .sidebar .col-2{
-	padding: 0;
+.contenedor .sidebar .col-2 {
+  padding: 0;
 }
-.title{
-	font-weight: bolder;
+.title {
+  font-weight: bolder;
 }
-#sala-info-img{
-	border: rgba(0, 0, 0, 0.308) 0.125rem solid;
-	height: 18.75rem !important;
-    padding-right: 0.4375rem !important;
-	margin-top: 0.375rem;
+#sala-info-img {
+  border: rgba(0, 0, 0, 0.308) 0.125rem solid;
+  height: 18.75rem !important;
+  padding-right: 0.4375rem !important;
+  margin-top: 0.375rem;
 }
-.sala-info-box{
-	padding: 0.3125rem 0 0.3125rem 0 !important;
-	background:rgba(28, 28, 28, 1);
-	text-align: center;
-	align-items: center;
-	justify-content: center;
+.sala-info-box {
+  padding: 0.3125rem 0 0.3125rem 0 !important;
+  background: rgba(28, 28, 28, 1);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
-.sala-width{
-	width: 100%;
+.sala-width {
+  width: 100%;
 }
-.sidebar.content{
-	margin-bottom: 0.625rem;
+.sidebar.content {
+  margin-bottom: 0.625rem;
 }
 
 /* The container */
 .stalkers {
-	margin-right: 0.9375rem;
-	display: block;
-	position: relative;
-	padding-left: 2.1875rem;
-	margin-bottom: 0.75rem;
-	cursor: pointer;
-	font-size: 1.375rem;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-  }
-  
-  /* Hide the browser's default checkbox */
-  .stalkers input {
-	position: absolute;
-	opacity: 0;
-	cursor: pointer;
-	height: 0;
-	width: 0;
-  }
-  
-  /* Create a custom checkbox */
-  .checkmark {
-	margin-left: 2.5rem;
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 1.5625rem;
-	width: 1.5625rem;
-	background-color: #5f5f5f;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .stalkers:hover input ~ .checkmark {
-	background-color:#5f5f5f;
-  }
-  .stalkers input:checked ~ .checkmark {
-	background-color: #5f5f5f;
-  }
-  
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
-	content: "";
-	position: absolute;
-	display: none;
-  }
-  
-  /* Show the checkmark when checked */
-  .stalkers input:checked ~ .checkmark:after {
-	display: block;
-  }
-  
-  /* Style the checkmark/indicator */
-  .stalkers .checkmark:after {
-	left: 0.5625rem;
-	top: 0.3125rem;
-	width: 0.3125rem;
-	height: 0.625rem;
-	border: solid white;
-	border-width: 0 0.1875rem 0.1875rem 0;
-	transform: rotate(45deg);
-  }
+  margin-right: 0.9375rem;
+  display: block;
+  position: relative;
+  padding-left: 2.1875rem;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  font-size: 1.375rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.stalkers input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  margin-left: 2.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.5625rem;
+  width: 1.5625rem;
+  background-color: #5f5f5f;
+}
+
+/* On mouse-over, add a grey background color */
+.stalkers:hover input ~ .checkmark {
+  background-color: #5f5f5f;
+}
+.stalkers input:checked ~ .checkmark {
+  background-color: #5f5f5f;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.stalkers input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.stalkers .checkmark:after {
+  left: 0.5625rem;
+  top: 0.3125rem;
+  width: 0.3125rem;
+  height: 0.625rem;
+  border: solid white;
+  border-width: 0 0.1875rem 0.1875rem 0;
+  transform: rotate(45deg);
+}
 /* WIDGET 1-2 */
-.widget-1{
-	grid-area: widget-1;
-	width: 100%;
-	height: 13.125rem;
-	background-color: red;
+.widget-1 {
+  grid-area: widget-1;
+  width: 100%;
+  height: 13.125rem;
+  background-color: red;
 }
 /* START MENU */
 .contenedor .start-menu {
-	padding: 10px;
-	margin-right: 0;
-	background: #242424;
-	color: #fff;
-	min-height: 3.75rem;
-	grid-area: start-menu;
-	margin-left: 0;
-	padding-left: 0 !important;
-	padding-right: 0 !important;
+  padding: 10px;
+  margin-right: 0;
+  background: #242424;
+  color: #fff;
+  min-height: 3.75rem;
+  grid-area: start-menu;
+  margin-left: 0;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 .button {
-	font: 12px solid;
-	font-weight: bold;
-	background-color: #474747;
-	border: 0.0625rem solid #242424;
-	padding: 0px !important;
-	height: 2.5rem;
-	color: white;
-	cursor: pointer;
+  font: 12px solid;
+  font-weight: bold;
+  background-color: #474747;
+  border: 0.0625rem solid #242424;
+  padding: 0px !important;
+  height: 2.5rem;
+  color: white;
+  cursor: pointer;
 }
-.start{
-	background-color:#800604;
+.start {
+  background-color: #800604;
 }
-.button:hover{
-	background-color: #2d3135;
+.button:hover {
+  background-color: #2d3135;
 }
 .quick {
-	background-color: #c52232;
+  background-color: #c52232;
 }
-.crear{
-	margin-left: 0.625rem !important;
+.crear {
+  margin-left: 0.625rem !important;
 }
 /* CHATSBOXS */
 .contenedor .chatsbox {
-	margin-right: -8.125rem;
-	padding-left: 0.625rem;
-	background: rgb(31, 31, 31);
-	color: #fff;
-	grid-area: chatbox;
-	min-height: 12.5rem;
+  margin-right: -8.125rem;
+  padding-left: 0.625rem;
+  background: rgb(31, 31, 31);
+  color: #fff;
+  grid-area: chatbox;
+  min-height: 12.5rem;
 }
-.selected{
-	background:  rgb(31, 31, 31);
-	color: #745b10;
+.selected {
+  background: rgb(31, 31, 31);
+  color: #745b10;
 }
-.chats{
-	margin-top: 0.625rem;
-	background: rgb(31, 31, 31);
-	max-width: 100%;
+.chats {
+  margin-top: 0.625rem;
+  background: rgb(31, 31, 31);
+  max-width: 100%;
 }
-.pride, .todos, .shouting{
-	padding-top: 0.3125rem;
-	border: 0.0625rem solid #000 ;
-	padding-bottom: 0.3125rem;
-	background: #80808017;
-	font-weight: bolder;
-	min-width: 5rem !important;
+.pride,
+.todos,
+.shouting {
+  padding-top: 0.3125rem;
+  border: 0.0625rem solid #000;
+  padding-bottom: 0.3125rem;
+  background: #80808017;
+  font-weight: bolder;
+  min-width: 5rem !important;
 }
-.chatbox, .inputbox{
-	border: 0.0625rem solid rgba(110, 110, 110, 0.486);
-	color: wheat;
-	width: 100%;
-	background: rgb(31, 31, 31);
+.chatbox,
+.inputbox {
+  border: 0.0625rem solid rgba(110, 110, 110, 0.486);
+  color: wheat;
+  width: 100%;
+  background: rgb(31, 31, 31);
 }
 /* width */
 ::-webkit-scrollbar {
-	width: 0.625rem;
-	
-  }
-  
-  ::-webkit-scrollbar-button{
-	background: rgb(51, 51, 51); 
-	border: 0.0625rem solid grey;
-  }
-  ::-webkit-scrollbar-track-piece{
-	background: rgb(31, 31, 31);
-  }
-  ::-webkit-scrollbar-corner{
-	background: rgb(44, 44, 46);
-  }
-  ::-webkit-resizer{
-	  background: violet;
-  }
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-	background: #888; 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-	background: #555; 
-  }
-.chatbox{
-	
-	overflow-y: scroll;
-	border: 0.0625rem solid rgb(143, 143, 143);
-	height: 9.1875rem;
-
+  width: 0.625rem;
 }
-	.chats{
-		margin-left: 0 !important;
-	}
-	.chatbox p{
-		margin: 0;
-	}
 
-	.persona_pride{
-		color: blueviolet;
-	}
-	.persona_rival{
-		color: red;
-	}
-	.persona_todos, .me{
-		color: grey;
-	}
-	
+::-webkit-scrollbar-button {
+  background: rgb(51, 51, 51);
+  border: 0.0625rem solid grey;
+}
+::-webkit-scrollbar-track-piece {
+  background: rgb(31, 31, 31);
+}
+::-webkit-scrollbar-corner {
+  background: rgb(44, 44, 46);
+}
+::-webkit-resizer {
+  background: violet;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.chatbox {
+  overflow-y: scroll;
+  border: 0.0625rem solid rgb(143, 143, 143);
+  height: 9.1875rem;
+}
+.chats {
+  margin-left: 0 !important;
+}
+.chatbox p {
+  margin: 0;
+}
+
+.persona_pride {
+  color: blueviolet;
+}
+.persona_rival {
+  color: red;
+}
+.persona_todos,
+.me {
+  color: grey;
+}
 
 /* Observadores */
 
-.stalker{
-	margin-left: 8.75rem;
-	grid-area: stalker;
-	background: rgb(31, 31, 31);
-	color: white;
+.stalker {
+  margin-left: 8.75rem;
+  grid-area: stalker;
+  background: rgb(31, 31, 31);
+  color: white;
 }
-.stalker .obs{
-	margin-top: 0.875rem;
-	margin-bottom: 0 !important;
+.stalker .obs {
+  margin-top: 0.875rem;
+  margin-bottom: 0 !important;
 }
-.chatbox-stalker{
-	overflow-y: scroll;
-	border: 0.0625rem solid rgb(143, 143, 143);
-	height: 81%;
-	margin-top: 0.4375rem;
-	margin-right: 0.9375rem;
-}
-
-.margin{
-	margin-left: 10px;
+.chatbox-stalker {
+  overflow-y: scroll;
+  border: 0.0625rem solid rgb(143, 143, 143);
+  height: 81%;
+  margin-top: 0.4375rem;
+  margin-right: 0.9375rem;
 }
 
-.corona{
-	color: #d8d823;
+.margin {
+  margin-left: 10px;
+}
+
+.corona {
+  color: #d8d823;
 }

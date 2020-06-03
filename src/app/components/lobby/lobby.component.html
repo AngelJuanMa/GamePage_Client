@@ -2,113 +2,107 @@
     'overlay': !popupp,
     'overlay_true': popupp
     }">
-            <div id="popupBody">
-                <h3 style="color: darkgoldenrod;" class="textAlign">CREAR SALA</h3>
-                <form #createForm="ngForm" (ngSubmit)="createSala(createForm)" class="col-lg-12 textAlign">
+    <div id="popupBody">
+        <h3 style="color: darkgoldenrod;" class="textAlign">CREAR SALA</h3>
+        <form #createForm="ngForm" (ngSubmit)="createSala(createForm)" class="col-lg-12 textAlign">
 
-                    <span class="inputsCreate">
-                        <label for="name" style="margin-top: 10px;">TITULO *</label>
-                        <input type="text" autocomplete="off" name="name" 
-                        #name="ngModel" [(ngModel)]="sala.name"
-                        class="form-control"
-                        [class.error]="!name.valid && name.touched" 
-                        required/>
-                    </span>
-                    <span class="inputsCreate">
-                        <label for="game" style="margin-top: 10px;">JUEGO *</label>
-                        <select name="game" #game="ngModel" 
-                        [(ngModel)]="sala.game" class="form-control" 
-                        [class.error]="!game.valid && game.touched"
-                        required>
-                            <option value="Tres en línea">Tres en línea</option>
-                            <option value="Damas">Damas</option>
-                        </select>
-                    </span>
-                    <span class="inputsCreate">
-                        <label for="password" style="margin-top: 10px;">PASSWORD</label>
-                        <input type="password" autocomplete="off" name="password" #password="ngModel" [(ngModel)]="sala.password" class="form-control" [class.error]="!password.valid && password.touched" >
-                    </span>
+            <span class="inputsCreate">
+                <label for="name" style="margin-top: 10px;">TITULO *</label>
+                <input type="text" autocomplete="off" name="name" #name="ngModel" [(ngModel)]="sala.name"
+                    class="form-control" [class.error]="!name.valid && name.touched" required />
+            </span>
+            <span class="inputsCreate">
+                <label for="game" style="margin-top: 10px;">JUEGO *</label>
+                <select name="game" #game="ngModel" [(ngModel)]="sala.game" class="form-control"
+                    [class.error]="!game.valid && game.touched" required>
+                    <option value="Tres en línea">Tres en línea</option>
+                    <option value="Damas">Damas</option>
+                </select>
+            </span>
+            <span class="inputsCreate">
+                <label for="password" style="margin-top: 10px;">PASSWORD</label>
+                <input type="password" autocomplete="off" name="password" #password="ngModel"
+                    [(ngModel)]="sala.password" class="form-control"
+                    [class.error]="!password.valid && password.touched">
+            </span>
 
-                    <input type="submit" value="CREAR"  
-                    class="btn btn-success createForm" 
-                    [disabled]="!createForm.form.valid"  (click)="popup()"/>
-                </form>
-            </div>
+            <input type="submit" value="CREAR" class="btn btn-success createForm" [disabled]="!createForm.form.valid"
+                (click)="popup()" />
+        </form>
+    </div>
 </div>
-   <div class="contenedor">
-        <div class="lobby">LOBBY</div>
-        <nav class="nav">
-            <div class="row">
-                <div class="col-1">
-                    <button (click)="getSalas('num')" class="buttons no"> No. </button>
-                </div>
-                <div class="">
-                    <button (click)="getSalas('password')" class="buttons"> <i class="fas fa-lock"></i> </button>
-                </div>
-                <div class=" col-6 col-md-6">
-                    <button (click)="getSalas('name')" class="buttons"> Nombre de Sala </button>
-                </div>
-                <div class="col-1 col-md-1">
-                    <button (click)="getSalas('play')" class="buttons"> Jugar </button>
-                </div>
-                <div class=" col-1 col-md-1">
-                    <button (click)="getSalas('players')" class="buttons"> Jugadores </button>
-                </div>
-                <div class=" col-1 col-md game">
-                    <button (click)="getSalas('game')" class="buttons"> Juego </button>
-                </div>
+<div class="contenedor">
+    <div class="lobby">LOBBY</div>
+    <nav class="nav">
+        <div class="row">
+            <div class="col-1">
+                <button (click)="getSalas('num')" class="buttons no"> No. </button>
             </div>
-        </nav>
-        <main class="contenido">
-            <div *ngFor="let sala of salas" class="row sala"
-            (click)="joinSala(sala)"
-            (mouseenter)="mouseEnter(sala)"
+            <div class="">
+                <button (click)="getSalas('password')" class="buttons"> <i class="fas fa-lock"></i> </button>
+            </div>
+            <div class=" col-6 col-md-6">
+                <button (click)="getSalas('name')" class="buttons"> Nombre de Sala </button>
+            </div>
+            <div class="col-1 col-md-1">
+                <button (click)="getSalas('play')" class="buttons"> Jugar </button>
+            </div>
+            <div class=" col-1 col-md-1">
+                <button (click)="getSalas('players')" class="buttons"> Jugadores </button>
+            </div>
+            <div class=" col-1 col-md game">
+                <button (click)="getSalas('game')" class="buttons"> Juego </button>
+            </div>
+        </div>
+    </nav>
+    <main class="contenido">
+        <div *ngFor="let sala of salas" class="row sala" (click)="joinSala(sala)" (mouseenter)="mouseEnter(sala)"
             (mouseleave)="mouseLeave(sala)">
-                <span class="col-1">{{sala.num}}</span>
-                <span class="password"><i *ngIf="sala.password != null" class="fas fa-lock"></i></span>
-                <span class="col-6  ">{{sala.name}}</span>
-                <span class="col-1 play ">Jugando</span>
-                <span class="col-1 players ">2/2</span>
-                <span class="col game ">{{sala.game}}</span>
-            </div>
-        </main>
-        <aside class="sidebar">
-            <p *ngIf="!salaOver" >TITULO</p>
-            <p>{{salaOver.name}}</p>
-            <img src="../../assets/wf.webp" id="sala-info-img" width="100%" height="25%" alt="">
-            <p>Juego
-                    <span *ngIf="!salaOver" class="sala-info-box">JUEGO</span>
-                    <span *ngIf="salaOver" class="sala-info-box">{{salaOver.game}}</span>
-            </p>
-            <p>Rondas <span class="sala-info-box">12</span></p>
-            <p>Jugadores <span class="sala-info-box">2/2</span></p>
-            <p>Estilo <span class="sala-info-box">Clasic</span></p>
-            <p>Observadores <label class="stalkers">
+            <span class="col-1">{{sala.num}}</span>
+            <span class="password"><i *ngIf="sala.password != null" class="fas fa-lock"></i></span>
+            <span class="col-6  ">{{sala.name}}</span>
+            <span class="col-1 play ">Jugando</span>
+            <span class="col-1 players ">2/2</span>
+            <span class="col game ">{{sala.game}}</span>
+        </div>
+    </main>
+    <aside class="sidebar">
+        <p *ngIf="!salaOver">TITULO</p>
+        <p>{{salaOver.name}}</p>
+        <img src="../../assets/wf.webp" id="sala-info-img" width="100%" height="25%" alt="">
+        <p>Juego
+            <span *ngIf="!salaOver" class="sala-info-box">JUEGO</span>
+            <span *ngIf="salaOver" class="sala-info-box">{{salaOver.game}}</span>
+        </p>
+        <p>Rondas <span class="sala-info-box">12</span></p>
+        <p>Jugadores <span class="sala-info-box">2/2</span></p>
+        <p>Estilo <span class="sala-info-box">Clasic</span></p>
+        <p>Observadores <label class="stalkers">
                 <input type="checkbox" checked="checked">
                 <span class="checkmark"></span>
-              </label></p>
+            </label></p>
 
-        </aside>
-        <div class="row widget-1">
-            <div class="col-2">
-              <button (click)="getSalas('num')" class="button">Actualizar</button>
-            </div>
-            <div class="col">
-              </div>
-              <div class="col-2">
-               <button class="arrow"><i class="fas fa-angle-left"></i></button>
-              </div>
-            <div class="col">
-                <button class="arrow"><i class="fas fa-angle-right"></i></button>
-            </div>
-            <div class="col-2">
-                <button class="button quick">Inicio Rapido</button>
-            </div>
-            <div  class="col-2 crear">
-                <button (click)="popup()" class="button">CREAR</button>
-              </div>
-          </div>
-
+    </aside>
+    <div class="row widget-1">
+        <div class="col-2">
+            <button (click)="getSalas('num')" class="button">Actualizar</button>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col-2">
+            <button class="arrow"><i class="fas fa-angle-left"></i></button>
+        </div>
+        <div class="col">
+            <button class="arrow"><i class="fas fa-angle-right"></i></button>
+        </div>
+        <div class="col-2">
+            <button class="button quick">Inicio Rapido</button>
+        </div>
+        <div class="col-2 crear">
+            <button (click)="popup()" class="button">CREAR</button>
+        </div>
     </div>
 
-    <app-chatbox></app-chatbox>
+</div>
+
+<app-chatbox></app-chatbox>

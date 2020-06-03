@@ -4,23 +4,23 @@
     <h3 class="prideName">{{prideName}}</h3>
     <div *ngFor="let member of members">
       <p>{{member.nick}} <span *ngIf="prideMaster == member._id">MASTER</span></p>
-      <button *ngIf="prideMaster == identity._id && member._id != identity._id " (click)="deleteMember(member._id)" id="delete">Eliminar</button>
+      <button *ngIf="prideMaster == identity._id && member._id != identity._id " (click)="deleteMember(member._id)"
+        id="delete">Eliminar</button>
     </div>
   </div>
 
   <div *ngIf="!identity.pride">
     <h3 id="pride">PRIDE</h3>
-    <form #CreateForm="ngForm" (ngSubmit)="onSubmit(CreateForm)" >
+    <form #CreateForm="ngForm" (ngSubmit)="onSubmit(CreateForm)">
       <label for="name">CREAR PRIDE</label>
-      <input type="text" class="input" autocomplete="off" 
-      name="name" #name="ngModel" [class.error]="!name.valid && name.touched"
-      [(ngModel)]="pride.name" required />
-      <input type="submit" value="CREAR"  class="inputSend" [disabled]="!CreateForm.form.valid" />
+      <input type="text" class="input" autocomplete="off" name="name" #name="ngModel"
+        [class.error]="!name.valid && name.touched" [(ngModel)]="pride.name" required />
+      <input type="submit" value="CREAR" class="inputSend" [disabled]="!CreateForm.form.valid" />
     </form>
-    <br/>
+    <br />
     <label for="search">BUSCAR PRIDE</label>
     <input type="text" name="search" class="input" [(ngModel)]="prides.name">
-    <button (click)="getPrides()" class="inputSend" >BUSCAR</button>
+    <button (click)="getPrides()" class="inputSend">BUSCAR</button>
 
     <div *ngFor="let prideR of pridesR">
       <button class="users" (click)="getPride(prideR)">{{prideR.name}}</button>
@@ -34,10 +34,10 @@
 
 <!-- POPUP -->
 <div *ngIf="identity.pride && prideMaster && popupPride">
-  
+
   <div class="request" *ngFor="let userToRequest of usersToRequest">
-      <p style="color: 'white'">El usuario: {{userToRequest.user.nick}} solicita aplicar.</p>
-      <button id="applyR" (click)="joinPride(userToRequest.user._id)">APLICAR</button>
-      <button id="deleteR" (click)="deleteRequest(userToRequest.user._id)">BORRAR</button>
+    <p style="color: 'white'">El usuario: {{userToRequest.user.nick}} solicita aplicar.</p>
+    <button id="applyR" (click)="joinPride(userToRequest.user._id)">APLICAR</button>
+    <button id="deleteR" (click)="deleteRequest(userToRequest.user._id)">BORRAR</button>
   </div>
 </div>

@@ -6,54 +6,64 @@ import { Message } from '../models/message';
 import { User } from '../models/user';
 
 @Injectable()
-export class MessageService{
-	public url:string;
+export class MessageService {
+  public url: string;
 
-	constructor(private _http: HttpClient){
-		this.url = GLOBAL.url;
-	}
-
-	sendMessage(token, message: Message): Observable<any>{
-		let params = JSON.stringify(message);
-		let headers = new HttpHeaders().set('Content-Type', 'application/json')
-									   .set('Authorization',token);
-
-    return this._http.post(this.url+'message', params, {headers:headers});
-  }
-  emittedMessages(token): Observable<any>{
-  let headers = new HttpHeaders().set('Content-Type', 'application/json')
-                    .set('Authorization',token);
-
-    return this._http.get(this.url+'my-messages', {headers:headers});
-  }
-  receivedMessages(token): Observable<any>{
-  let headers = new HttpHeaders().set('Content-Type', 'application/json')
-                    .set('Authorization',token);
-
-    return this._http.get(this.url+'messages', {headers:headers});
+  constructor(private _http: HttpClient) {
+    this.url = GLOBAL.url;
   }
 
-  userMessages(token, friend): Observable<any>{
-  let headers = new HttpHeaders().set('Content-Type', 'application/json')
-                      .set('Authorization',token);
+  sendMessage(token, message: Message): Observable<any> {
+    let params = JSON.stringify(message);
+    let headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Authorization', token);
 
-    return this._http.get(this.url+'userMessages/'+friend, {headers:headers});
+    return this._http.post(this.url + 'message', params, { headers: headers });
+  }
+  emittedMessages(token): Observable<any> {
+    let headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Authorization', token);
+
+    return this._http.get(this.url + 'my-messages', { headers: headers });
+  }
+  receivedMessages(token): Observable<any> {
+    let headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Authorization', token);
+
+    return this._http.get(this.url + 'messages', { headers: headers });
   }
 
+  userMessages(token, friend): Observable<any> {
+    let headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Authorization', token);
 
-  getMessageGeneral(token, pride): Observable<any>{
-    let headers = new HttpHeaders().set('Content-Type', 'application/json')
-                        .set('Authorization',token);
-
-      return this._http.get(this.url+'getMessageGeneral/'+pride, {headers:headers});
+    return this._http.get(this.url + 'userMessages/' + friend, {
+      headers: headers,
+    });
   }
 
-  setViewedMessages(token, emitter: User): Observable<any>{
+  getMessageGeneral(token, pride): Observable<any> {
+    let headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Authorization', token);
+
+    return this._http.get(this.url + 'getMessageGeneral/' + pride, {
+      headers: headers,
+    });
+  }
+
+  setViewedMessages(token, emitter: User): Observable<any> {
     let params = JSON.stringify(emitter);
-    let headers = new HttpHeaders().set('Content-Type', 'application/json')
-                        .set('Authorization',token);
+    let headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Authorization', token);
 
-      return this._http.put(this.url+'set-viewed-messages', params, {headers:headers});
+    return this._http.put(this.url + 'set-viewed-messages', params, {
+      headers: headers,
+    });
   }
 }
-

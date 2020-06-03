@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 
-
 @media screen and (max-width: 576px){
   .none{
     display:none;
@@ -15,8 +14,8 @@
 }
 }
 
-@media screen and (min-width: 1366px){
-  .large{
+@media screen and (min-width: 1366px) {
+  .large {
     margin-left: auto;
     margin-right: auto;
     width: 70%;
@@ -25,77 +24,76 @@
 
 /* HEADER */
 .header {
-	background: #1b1b1b;
-	color: #fff;
-	grid-area: header;
-	height: 70px;
-	padding: 0 !important;
-	margin-right: 0 !important;
+  background: #1b1b1b;
+  color: #fff;
+  grid-area: header;
+  height: 70px;
+  padding: 0 !important;
+  margin-right: 0 !important;
 }
-.user{
-	min-width: 60px;
-	min-height: 60px;
-	padding-left: 7px;
+.user {
+  min-width: 60px;
+  min-height: 60px;
+  padding-left: 7px;
   padding-top: 5px !important;
   background: linear-gradient(45deg, white, white, white);
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
-.ajustar{
-	color: rgb(209, 209, 209);
-	cursor: pointer;
+.ajustar {
+  color: rgb(209, 209, 209);
+  cursor: pointer;
   padding-top: 20px !important;
   transition: 0.5s;
-} 
-.ajustar:hover{
-	color: rgb(148, 148, 148);
 }
-.icon{
+.ajustar:hover {
+  color: rgb(148, 148, 148);
+}
+.icon {
   color: white;
 }
 
 body {
   background-color: rgb(61, 61, 61) !important;
   position: static;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /* Mozilla  */
-progress::-moz-progress-bar{
-    background: rgb(170, 169, 169);
-    border-radius : 20px;
+progress::-moz-progress-bar {
+  background: rgb(170, 169, 169);
+  border-radius: 20px;
 }
 progress::-webkit-progress-value {
-    background: rgb(170, 169, 169);
-    border-radius : 20px;
+  background: rgb(170, 169, 169);
+  border-radius: 20px;
 }
 progress::-webkit-progress-bar {
-    background-color:rgb(112, 110, 110);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset; /*esta sombra es para simular el borde que he aplicado arriba para Mozilla*/
-    border-radius : 20px ;
+  background-color: rgb(112, 110, 110);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset; /*esta sombra es para simular el borde que he aplicado arriba para Mozilla*/
+  border-radius: 20px;
 }
 /*  Chrome y Safari */
-progress{
-    /* Elimino la apariencia por defecto */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+progress {
+  /* Elimino la apariencia por defecto */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 
-    /* Quito el borde que aparece en Firefox */
-    border: none;
+  /* Quito el borde que aparece en Firefox */
+  border: none;
 
-    /* Añado mis propios estilos */
-    width: 100px;
-    height: 10px;
-	overflow:hidden;
+  /* Añado mis propios estilos */
+  width: 100px;
+  height: 10px;
+  overflow: hidden;
 
-/*  Estos estilos solo se aplicaran al fondo de la barra en mozilla */
-        border:1px inset #666;
-    background-color:#D8D8D8;
-    border-radius : 20px ;
+  /*  Estos estilos solo se aplicaran al fondo de la barra en mozilla */
+  border: 1px inset #666;
+  background-color: #d8d8d8;
+  border-radius: 20px;
 }
 
-.gp{
+.gp {
   margin-left: 6px;
 }
-

@@ -1,44 +1,45 @@
-<div class="container" >
+<div class="container">
 	<p *ngIf="message" class="message">{{message}}</p>
 	<div class="contenedor" *ngIf="!stepTwo">
 		<form #registerForm="ngForm" (ngSubmit)="verifyEmail(registerForm)" class="formulario">
 			<h1>Registro</h1>
-				<span class="input-contenedor"> 
+			<span class="input-contenedor">
 				<p>
-					<input type="email" class="button-register" placeholder="Correo electrónico"  autofocus="autofocus"
-					 name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control"
-					  [class.error]="!email.valid && email.touched" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+					<input type="email" class="button-register" placeholder="Correo electrónico" autofocus="autofocus"
+						name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control"
+						[class.error]="!email.valid && email.touched" required
+						pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
 				</p>
 
 				<p>
 					<input type="text" class="button-register" autocapitalize="off" placeholder="Nombre de usuario"
-					name="nick" #nick="ngModel" [(ngModel)]="user.nick" maxlength="20" class="form-control"
-					 [class.error]="!nick.valid && nick.touched" required />
+						name="nick" #nick="ngModel" [(ngModel)]="user.nick" maxlength="20" class="form-control"
+						[class.error]="!nick.valid && nick.touched" required />
 				</p>
 
 				<p>
 					<input type="password" class="button-register" autocomplete="off" placeholder="Contraseña"
-					 name="password" #password="ngModel" [class.error]="!password.valid && password.touched"
-					 [(ngModel)]="user.password" class="form-control" required />
+						name="password" #password="ngModel" [class.error]="!password.valid && password.touched"
+						[(ngModel)]="user.password" class="form-control" required />
 				</p>
 
-				</span>
-				<p>
-				<input type="checkbox"  name="politics"   #politics="ngModel" style="border: 1px solid black;" [(ngModel)]="user.politics" required/> <a>Politicas de privacidad y seguridad</a>
-				</p>
-				<input type="submit" value="Registrate" 
-				 class="button-register btn btn-success" [disabled]="!registerForm.form.valid"
-				[@anyBoton]="state" (mouseleave)="togleBoton()" (mouseenter)="togleBoton()"  />
-				<p>¿Ya tienes cuenta? <a class="link" href="login">Logueate</a></p>
+			</span>
+			<p>
+				<input type="checkbox" name="politics" #politics="ngModel" style="border: 1px solid black;"
+					[(ngModel)]="user.politics" required /> <a>Politicas de privacidad y seguridad</a>
+			</p>
+			<input type="submit" value="Registrate" class="button-register btn btn-success"
+				[disabled]="!registerForm.form.valid" [@anyBoton]="state" (mouseleave)="togleBoton()"
+				(mouseenter)="togleBoton()" />
+			<p>¿Ya tienes cuenta? <a class="link" href="login">Logueate</a></p>
 		</form>
 	</div>
-	<div *ngIf="stepTwo" id="code" class="container" >
+	<div *ngIf="stepTwo" id="code" class="container">
 		<div class="contenedor formulario">
-		<label id="labelMessage" for="code">Ingrese el código que se le a enviado a su correo electrónico</label>
-		<p>{{user.email}}</p>
-		<input type="text" id="inputCode" [(ngModel)]="user.code" name="code">
-		<button (click)="onSubmit()" id="buttonCode">ENVIAR</button>
+			<label id="labelMessage" for="code">Ingrese el código que se le a enviado a su correo electrónico</label>
+			<p>{{user.email}}</p>
+			<input type="text" id="inputCode" [(ngModel)]="user.code" name="code">
+			<button (click)="onSubmit()" id="buttonCode">ENVIAR</button>
 		</div>
-	</div>		
+	</div>
 </div>
-

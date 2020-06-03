@@ -5,29 +5,29 @@ import { GLOBAL } from './global';
 import { Sala } from '../models/sala';
 
 @Injectable()
-export class SalaService{
-	public url:string;
-	public identity;
-	public token;
-	public stats;
+export class SalaService {
+  public url: string;
+  public identity;
+  public token;
+  public stats;
 
-	constructor(public _http: HttpClient){
-		this.url = GLOBAL.url;
-	}
+  constructor(public _http: HttpClient) {
+    this.url = GLOBAL.url;
+  }
 
-	getSala(token, num):Observable<any>{
-		let headers = new HttpHeaders().set('Content-Type','application/json')
-									                      .set('Authorization',token);
+  getSala(token, num): Observable<any> {
+    let headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Authorization', token);
 
+    return this._http.get(this.url + 'getSala/' + num, { headers: headers });
+  }
 
-		return this._http.get(this.url+'getSala/'+num, {headers: headers});
-	}
+  findUserInSala(token): Observable<any> {
+    let headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Authorization', token);
 
-	findUserInSala(token):Observable<any> {
-		let headers = new HttpHeaders().set('Content-Type','application/json')
-									   .set('Authorization',token);
-
-		return this._http.get(this.url+'findUserInSala', {headers: headers});
-	}
+    return this._http.get(this.url + 'findUserInSala', { headers: headers });
+  }
 }
-

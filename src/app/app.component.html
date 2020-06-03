@@ -1,41 +1,46 @@
 <header *ngIf="identity" class="header">
-<message [popupUser]="open_user" [popupMessage]="open_box"></message>
-<pride [popupPride]="open_clan"></pride>
-<user-edit [popupUpdate]="open_update"></user-edit>
-<div class="row">
-  <div class="icon divUser" [ngSwitch]="ranking">
-    <span *ngSwitchCase="4"><i #skin class="fas fa-user user fa-3x"></i></span>
-    <span *ngSwitchCase="6"><i #skin class="fas fa-user-injured user fa-3x"></i></span>
-    <span *ngSwitchCase="12"><i #skin class="fas fa-user-tie user fa-3x"></i></span>
-    <span *ngSwitchCase="17"><i #skin class="fas fa-user-secret user fa-3x"></i></span>
-    <span *ngSwitchCase="21"><i #skin class="fas fa-user-ninja user fa-3x"></i></span>
-    <span *ngSwitchCase="27"><i #skin class="fas fa-user-astronaut user fa-3x"></i></span>
-  </div>
+  <message [popupUser]="open_user" [popupMessage]="open_box"></message>
+  <pride [popupPride]="open_clan"></pride>
+  <user-edit [popupUpdate]="open_update"></user-edit>
+  <div class="row">
+    <div class="icon divUser" [ngSwitch]="ranking">
+      <span *ngSwitchCase="4"><i #skin class="fas fa-user user fa-3x"></i></span>
+      <span *ngSwitchCase="6"><i #skin class="fas fa-user-injured user fa-3x"></i></span>
+      <span *ngSwitchCase="12"><i #skin class="fas fa-user-tie user fa-3x"></i></span>
+      <span *ngSwitchCase="17"><i #skin class="fas fa-user-secret user fa-3x"></i></span>
+      <span *ngSwitchCase="21"><i #skin class="fas fa-user-ninja user fa-3x"></i></span>
+      <span *ngSwitchCase="27"><i #skin class="fas fa-user-astronaut user fa-3x"></i></span>
+    </div>
 
     <div class="col-sm ajustar-2">
-      <p style="font: '15px solid'">Ganadas: {{percent}}%</p><progress value="{{identity.wins}}" max="{{max}}"></progress>
+      <p style="font: '15px solid'">Ganadas: {{percent}}%</p><progress value="{{identity.wins}}"
+        max="{{max}}"></progress>
       <p>{{identity.nick}}</p>
     </div>
     <div class="col-sm-5 col-md-7 col-xl-9 ajustar-2">
-      <p style="font: '15px solid'" >Experiencia </p><progress class="gp" value="{{gp}}" max="{{ranking}}"></progress>
+      <p style="font: '15px solid'">Experiencia </p><progress class="gp" value="{{gp}}" max="{{ranking}}"></progress>
     </div>
 
     <!-- No contener espacios y caracteres -->
 
 
     <div #clan class="col-sm col-xl ajustar none" (click)="openPopup_clan(false, false)"
-    (mouseenter)="openPopup_clan(true, false)" (mouseleave)="openPopup_clan(false, true)" ><i class="fas fa-users fa-2x"></i></div>
+      (mouseenter)="openPopup_clan(true, false)" (mouseleave)="openPopup_clan(false, true)"><i
+        class="fas fa-users fa-2x"></i></div>
     <div #friends class="col-sm col-xl ajustar none" (click)="openPopup_box(false, false)"
-    (mouseenter)="openPopup_box(true, false)" (mouseleave)="openPopup_box(false, true)"  ><i class="fas fa-envelope fa-2x"></i></div>
-    <div #user class="col-sm col-xl ajustar none" (click)="openPopup_user(false, false)" 
-    (mouseenter)="openPopup_user(true, false)" (mouseleave)="openPopup_user(false, true)"><i class="fas fa-id-card fa-2x"></i></div>
-    <div #edit class="col-sm col-xl ajustar none" (click)="openPopup_update(false, false)" 
-    (mouseenter)="openPopup_update(true, false)" (mouseleave)="openPopup_update(false, true)"><i class="fas fa-pen-square fa-2x"></i></div>
+      (mouseenter)="openPopup_box(true, false)" (mouseleave)="openPopup_box(false, true)"><i
+        class="fas fa-envelope fa-2x"></i></div>
+    <div #user class="col-sm col-xl ajustar none" (click)="openPopup_user(false, false)"
+      (mouseenter)="openPopup_user(true, false)" (mouseleave)="openPopup_user(false, true)"><i
+        class="fas fa-id-card fa-2x"></i></div>
+    <div #edit class="col-sm col-xl ajustar none" (click)="openPopup_update(false, false)"
+      (mouseenter)="openPopup_update(true, false)" (mouseleave)="openPopup_update(false, true)"><i
+        class="fas fa-pen-square fa-2x"></i></div>
     <div class="col-sm col-xl ajustar rotate" (click)="logout()"><i class="fas fa-arrow-left fa-2x"></i></div>
 
-    
-</div>
-</header>
-  <div class="large">
-    <router-outlet (cambio)="funCambiar($event)"></router-outlet>
+
   </div>
+</header>
+<div class="large">
+  <router-outlet (cambio)="funCambiar($event)"></router-outlet>
+</div>

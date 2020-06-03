@@ -15,7 +15,7 @@
   'overlay': !popupMessage,
   'overlay_true': popupMessage
   }">
-  <div id="form-message"  #doMessages>
+  <div id="form-message" #doMessages>
     <div style="height: 41px;">
       <button id="out" (click)="friendMessages('none','block')">
         <i class="fas fa-arrow-left"></i>
@@ -26,36 +26,35 @@
           <span *ngSwitchCase="4"><i #skin class="fas fa-user-secret user"></i></span>
           <span *ngSwitchCase="5"><i #skin class="fas fa-user-ninja user"></i></span>
           <span *ngSwitchCase="6"><i #skin class="fas fa-user-astronaut user"></i></span>
-      </span>
+        </span>
       </button>
       <span *ngIf="friend">{{friend.nick}}</span>
-      <span style="height: 10px;"> 
+      <span style="height: 10px;">
         <p style="font-size: 10px;" *ngIf="userWriting">esta escribiendo...</p>
       </span>
-      </div>
-       <div #chatbox class="chatbox">
-      
-      
+    </div>
+    <div #chatbox class="chatbox">
+
+
       <p *ngFor="let messageArr of messagesArr" [ngClass]="{
       'identity': identity.nick == messageArr.emitter.nick,
       'friend': identity.nick != messageArr.emitter.nick
       }" class="message12">{{messageArr.text}} {{ (messageArr.created_at | amFromUnix) | amDateFormat:'h:mm'}}
-      <span *ngIf="identity.nick == messageArr.emitter.nick">
-        <i *ngIf="messageArr.viewed === 'true' ;else viewed" class="fas fa-check-double viewed"></i>
-        <ng-template #viewed><i class="fas fa-check noviewed"></i></ng-template>
-      </span>
-      
+        <span *ngIf="identity.nick == messageArr.emitter.nick">
+          <i *ngIf="messageArr.viewed === 'true' ;else viewed" class="fas fa-check-double viewed"></i>
+          <ng-template #viewed><i class="fas fa-check noviewed"></i></ng-template>
+        </span>
+
       </p>
-      
+
     </div>
     <div>
-      <form #messageForm="ngForm" id="formMessages"  (ngSubmit)="onSubmit(messageForm)">
-        <input type="text" (keyup)="emitWriting($event)" class="inputWriteMessage" autocomplete="off" placeholder="Escribe un mensaje"
-        name="text" #text="ngModel" [class.error]="!text.valid && text.touched"
-        [(ngModel)]="message.text" required />
-        <button type="submit" class="formSubmitMessage"
-        [disabled]="!messageForm.form.valid">
-        <i class="fas fa-paper-plane"></i>
+      <form #messageForm="ngForm" id="formMessages" (ngSubmit)="onSubmit(messageForm)">
+        <input type="text" (keyup)="emitWriting($event)" class="inputWriteMessage" autocomplete="off"
+          placeholder="Escribe un mensaje" name="text" #text="ngModel" [class.error]="!text.valid && text.touched"
+          [(ngModel)]="message.text" required />
+        <button type="submit" class="formSubmitMessage" [disabled]="!messageForm.form.valid">
+          <i class="fas fa-paper-plane"></i>
         </button>
       </form>
     </div>
@@ -64,15 +63,15 @@
     <h3 id="friends">AMIGOS</h3>
     <div id="first" *ngFor="let friendUser of friendsUsers">
       <div *ngIf="friendUser.user.nick">
-        <button class="buttonFriend" (click)="userMessages(friendUser.user)" >
-          <span >{{friendUser.user.nick}}</span>
+        <button class="buttonFriend" (click)="userMessages(friendUser.user)">
+          <span>{{friendUser.user.nick}}</span>
         </button>
         <button class="friendDelete" (click)="doDeleteFriend(friendUser)">
           X
         </button>
       </div>
       <div *ngIf="friendUser.followed.nick">
-        <button class="buttonFriend"  (click)="userMessages(friendUser.followed)" >
+        <button class="buttonFriend" (click)="userMessages(friendUser.followed)">
           <span>{{friendUser.followed.nick}}</span>
         </button>
         <button class="friendDelete" (click)="doDeleteFriend(friendUser)">
@@ -81,15 +80,17 @@
       </div>
     </div>
     <div class="form-add">
-      
-      <span><p class="error">{{error}}</p></span>
-      <form #followForm="ngForm" (ngSubmit)="onFollow(followForm)" 
-      [ngClass]="{'formularioErr': error, 'formularioSuc': friendSuccess}"  >
-        <input type="text" class="input-box" (keypress)="resetForm()"  autocomplete="off" 
-        placeholder="Agregar" [ngStyle]="{ 'border-color': error ? '#F00' :  'rgb(93, 92, 92)'}"
-        [ngStyle]="{ 'border-color': friendSuccess ? '#4CAF50' :  'rgb(93, 92, 92)'}"
-        name="followed" #followed="ngModel" [(ngModel)]="followReq.followed" />
-        <button type="submit" class="button-box"  >Enviar</button>
+
+      <span>
+        <p class="error">{{error}}</p>
+      </span>
+      <form #followForm="ngForm" (ngSubmit)="onFollow(followForm)"
+        [ngClass]="{'formularioErr': error, 'formularioSuc': friendSuccess}">
+        <input type="text" class="input-box" (keypress)="resetForm()" autocomplete="off" placeholder="Agregar"
+          [ngStyle]="{ 'border-color': error ? '#F00' :  'rgb(93, 92, 92)'}"
+          [ngStyle]="{ 'border-color': friendSuccess ? '#4CAF50' :  'rgb(93, 92, 92)'}" name="followed"
+          #followed="ngModel" [(ngModel)]="followReq.followed" />
+        <button type="submit" class="button-box">Enviar</button>
       </form>
     </div>
   </div>
@@ -101,16 +102,16 @@
   'overlay_true_Delete': userToDelete_id
   }">
   <div *ngIf="userToDelete_id" id="popupBody_Delete">
-      <p style="font-size: 15px;">¿Desea eliminar a {{userToDelete_nick}}?</p>
-      <p style="font-size: 10px;">Se eliminará de la lista de amigos.</p>
-      <button id="deleteFriend" (click)="deleteFriend()">BORRAR</button>
-      <button id="cancel" (click)="dontDeleteFriend()">CANCELAR</button>
+    <p style="font-size: 15px;">¿Desea eliminar a {{userToDelete_nick}}?</p>
+    <p style="font-size: 10px;">Se eliminará de la lista de amigos.</p>
+    <button id="deleteFriend" (click)="deleteFriend()">BORRAR</button>
+    <button id="cancel" (click)="dontDeleteFriend()">CANCELAR</button>
   </div>
 </div>
 
 <div *ngIf="popupMessage">
-  <div *ngFor="let followReq of followsReq" (mouseover)="userSelected(followReq.user._id)"
-  id="popupBody-request" class="overlay_true" #userRequest>
+  <div *ngFor="let followReq of followsReq" (mouseover)="userSelected(followReq.user._id)" id="popupBody-request"
+    class="overlay_true" #userRequest>
     <p id="user-request">{{followReq.user.nick}} ha solicitado seguirte.</p>
     <button type="submit" id="button-request-accept" (click)="doFollowReq(true)">ACEPTAR</button>
     <button type="submit" id="button-request-delete" (click)="doFollowReq(false)">BORRAR</button>

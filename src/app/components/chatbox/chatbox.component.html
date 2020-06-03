@@ -1,45 +1,47 @@
-<div class="contenedor-chatbox"> 
-<div class="chatsbox">
-    <div class="row chats" >
+<div class="contenedor-chatbox">
+  <div class="chatsbox">
+    <div class="row chats">
       <div>
-          <button (mouseenter)="todosHover(true)" (mouseleave)="todosHover(false)" (click)="toPride(false)" #todos class="todos">
+        <button (mouseenter)="todosHover(true)" (mouseleave)="todosHover(false)" (click)="toPride(false)" #todos
+          class="todos">
           TODOS
-          </button>
+        </button>
       </div>
-      <div >
-          <button (mouseenter)="clanHover(true)" (mouseleave)="clanHover(false)" (click)="toPride(true)" [disabled]="!identity.pride" #clan class="pride">
+      <div>
+        <button (mouseenter)="clanHover(true)" (mouseleave)="clanHover(false)" (click)="toPride(true)"
+          [disabled]="!identity.pride" #clan class="pride">
           CLAN
-          </button>
-      </div>
-      </div>
-      <div #chatboxTodos id="chatboxTodos" class="chatbox" *ngIf="!pride" >
-        <p class="persona_todos" id="messageTodos" *ngFor="let messageTodosGeneral of messagesTodosGeneral">
-          {{messageTodosGeneral.user}}: {{messageTodosGeneral.text}}
-        </p>
-      </div>
-      
-      <div  #chatboxPride class="chatbox" *ngIf="pride" >      
-        <p  *ngFor="let messagePrideGeneral of messagesPrideGeneral" class="persona_pride">
-          {{messagePrideGeneral.user}}: {{messagePrideGeneral.text}}
-        </p>
-      </div>
-      
-      <div class="inputbox">
-        <form #messageForm="ngForm" (ngSubmit)="sendMessage(messageForm)" >
-        <input type="text" autocomplete="off" name="text"  #text="ngModel" class="inputbox"
-         [(ngModel)]="message.text" required>
-        <input type="submit" id="send"  value="Enviar">
-        </form>
-
-      </div>
-  </div>
-    <div class="footer-2">
-      <h4 style="height: '38px'; background: '#1b1b1b';">USUARIOS</h4>
-      <div class="users">
-        <span class="usersA" *ngFor="let userArr of usersArr">
-          <p class="userArr" *ngIf="userArr.userId.nick">{{userArr.userId.nick}}</p>
-       
-        </span>
+        </button>
       </div>
     </div>
+    <div #chatboxTodos id="chatboxTodos" class="chatbox" *ngIf="!pride">
+      <p class="persona_todos" id="messageTodos" *ngFor="let messageTodosGeneral of messagesTodosGeneral">
+        {{messageTodosGeneral.user}}: {{messageTodosGeneral.text}}
+      </p>
+    </div>
+
+    <div #chatboxPride class="chatbox" *ngIf="pride">
+      <p *ngFor="let messagePrideGeneral of messagesPrideGeneral" class="persona_pride">
+        {{messagePrideGeneral.user}}: {{messagePrideGeneral.text}}
+      </p>
+    </div>
+
+    <div class="inputbox">
+      <form #messageForm="ngForm" (ngSubmit)="sendMessage(messageForm)">
+        <input type="text" autocomplete="off" name="text" #text="ngModel" class="inputbox" [(ngModel)]="message.text"
+          required>
+        <input type="submit" id="send" value="Enviar">
+      </form>
+
+    </div>
+  </div>
+  <div class="footer-2">
+    <h4 style="height: '38px'; background: '#1b1b1b';">USUARIOS</h4>
+    <div class="users">
+      <span class="usersA" *ngFor="let userArr of usersArr">
+        <p class="userArr" *ngIf="userArr.userId.nick">{{userArr.userId.nick}}</p>
+
+      </span>
+    </div>
+  </div>
 </div>
