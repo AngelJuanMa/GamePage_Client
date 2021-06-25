@@ -43,4 +43,12 @@ export class LobbyService {
 
     return this._http.get(this.url + 'joinSala/' + num, { headers: headers });
   }
+
+  joinSalaQuick(token): Observable<any> {
+    let headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Authorization', token);
+
+    return this._http.get(this.url + 'joinSalaQuick/', { headers: headers });
+  }
 }

@@ -14,7 +14,7 @@ import {
 @Component({
   selector: 'register',
   templateUrl: './register.component.html',
-  styleUrls: ['register.style.css'],
+  styleUrls: ['../login/login.style.css'],
   providers: [UserService],
   animations: [
     trigger('anyBoton', [

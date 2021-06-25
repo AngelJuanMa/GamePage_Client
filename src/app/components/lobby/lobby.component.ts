@@ -53,7 +53,7 @@ export class LobbyComponent implements OnInit {
       '',
       '¡Ven y unete!!',
       null,
-      '',
+      'Tres en línea',
       '',
       '',
       '',
@@ -125,6 +125,19 @@ export class LobbyComponent implements OnInit {
     this._lobbyService.joinSala(this.token, sala.num).subscribe(
       (response) => {
         this._router.navigate(['/sala/' + response.sala.num]);
+      },
+      (error) => {
+        console.log(<any>error);
+      }
+    );
+  }
+
+  joinSalaQuick(){
+    this._lobbyService.joinSalaQuick(this.token).subscribe(
+      (response) => {
+        console.log(response);
+        console.log('response');
+
       },
       (error) => {
         console.log(<any>error);

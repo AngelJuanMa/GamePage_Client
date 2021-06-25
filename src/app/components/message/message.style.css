@@ -55,20 +55,17 @@
 #popupBody,
 #popupBody-request,
 #popupBody-user {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  top: 70px;
-  right: 0;
-  margin: 0 auto;
-  position: absolute;
   z-index: 100;
 }
-#popupBody {
-  margin-left: 59%;
-}
 #popupBody-user {
-  margin-left: 68%;
   z-index: 103;
   color: white;
   height: auto;

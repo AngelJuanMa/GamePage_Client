@@ -320,8 +320,8 @@ p {
 }
 
 .button {
-  background-color: #d1d1d1;
-  color: black;
+  background-color: #1c1c1c;
+  color: white;
   border-radius: 6px;
 }
 .button:hover {
@@ -421,8 +421,8 @@ p {
   padding-right: 0 !important;
 }
 .quick {
-  color: yellow;
-  background-color: #c52232;
+  color: gold;
+  background-color: #f44336;
   height: 44px;
   font-weight: 100;
   font-size: x-small;
@@ -483,7 +483,8 @@ p {
   position: absolute;
   background: none;
   border: none;
-  background: orangered;
+  background: #f44336;
+  color: gold;
   width: 16.7%;
 }
 
@@ -546,4 +547,12 @@ p {
   grid-template-columns: repeat(3, 1fr); /*columnas en ancho*/
 
   grid-template-areas: "footer-1 footer-1 footer-2";
+}
+
+#closePopUpX{
+  width: 10%;
+  margin-left: 45%;
+  color: white;
+  border: none;
+  background: #f44336;
 }

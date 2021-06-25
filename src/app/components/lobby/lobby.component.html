@@ -3,6 +3,7 @@
     'overlay_true': popupp
     }">
     <div id="popupBody">
+        <button (click)="popup()" id="closePopUpX" >X</button>
         <h3 style="color: darkgoldenrod;" class="textAlign">CREAR SALA</h3>
         <form #createForm="ngForm" (ngSubmit)="createSala(createForm)" class="col-lg-12 textAlign">
 
@@ -15,13 +16,13 @@
                 <label for="game" style="margin-top: 10px;">JUEGO *</label>
                 <select name="game" #game="ngModel" [(ngModel)]="sala.game" class="form-control"
                     [class.error]="!game.valid && game.touched" required>
-                    <option value="Tres en línea">Tres en línea</option>
+                    <option value="Tres en línea" selected>Tres en línea</option>
                     <option value="Damas">Damas</option>
                 </select>
             </span>
             <span class="inputsCreate">
                 <label for="password" style="margin-top: 10px;">PASSWORD</label>
-                <input type="password" autocomplete="off" name="password" #password="ngModel"
+                <input type="password" autocomplete="false" name="password" #password="ngModel"
                     [(ngModel)]="sala.password" class="form-control"
                     [class.error]="!password.valid && password.touched">
             </span>
@@ -96,7 +97,7 @@
             <button class="arrow"><i class="fas fa-angle-right"></i></button>
         </div>
         <div class="col-2">
-            <button class="button quick">Inicio Rapido</button>
+            <button (click)="joinSalaQuick()" class="button quick">Inicio Rapido</button>
         </div>
         <div class="col-2 crear">
             <button (click)="popup()" class="button">CREAR</button>

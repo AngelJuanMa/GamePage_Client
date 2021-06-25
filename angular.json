@@ -24,7 +24,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/styles.css",
+              "src/assets/styles.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.js",
@@ -120,8 +120,13 @@
               "devServerTarget": "cliente:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "cliente"
 }
