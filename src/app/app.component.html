@@ -53,16 +53,7 @@
         (mouseenter)="openPopup_box(true, false)"
         (mouseleave)="openPopup_box(false, true)"
       >
-        <i class="fas fa-envelope fa-2x"></i>
-      </div>
-      <div
-        #user
-        class="ajustar none"
-        (click)="openPopup_user(false, false)"
-        (mouseenter)="openPopup_user(true, false)"
-        (mouseleave)="openPopup_user(false, true)"
-      >
-        <i class="fas fa-id-card fa-2x"></i>
+      <i class="fas fa-comments fa-2x"></i>
       </div>
       <div
         #edit
@@ -80,6 +71,5 @@
   </div>
 </header>
 <div class="large">
-  <marquee>Hola</marquee>
   <router-outlet (cambio)="funCambiar($event)"></router-outlet>
 </div>

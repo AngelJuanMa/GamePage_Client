@@ -96,4 +96,15 @@ export class UserService {
       headers: headers,
     });
   }
+
+  returnToLobby(user: User): Observable<any> {
+    let params = JSON.stringify(user);
+    let headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Authorization', this.getToken());
+
+    return this._http.put(this.url + 'returnToLobby/' + user._id, params, {
+      headers: headers,
+    });
+  }
 }

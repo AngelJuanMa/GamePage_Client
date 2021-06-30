@@ -6,13 +6,11 @@
 }
 
 .message {
-  background: #dc3545;
-  color: white;
-  text-align: center;
-  border: 1px rgb(168, 10, 10) solid !important;
-  margin: auto;
-  width: 500px;
-  border-radius: 2%;
+    color: #dc3545;
+    text-align: center;
+    margin: auto;
+    width: 500px;
+    border-radius: 2%;
 }
 
 .error {

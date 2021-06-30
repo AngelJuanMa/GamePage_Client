@@ -1,0 +1,61 @@
+.container {
+  margin-top: 150px;
+  padding: 0 !important;
+}
+
+.error {
+  border: 1px rgb(168, 10, 10) solid !important;
+}
+.contenedor {
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+  margin: auto;
+  width: 500px;
+  border-radius: 2%;
+}
+.link {
+  text-decoration: none;
+  color: #1a2537;
+  font-weight: 600;
+}
+
+#code {
+  border-radius: 10px;
+}
+
+/*Segundo Div*/
+#labelMessage {
+  width: 100%;
+  font: 20px solid;
+  color: white;
+}
+
+#inputCode {
+  font-size: xx-large;
+  text-align: center;
+  border-radius: 4px;
+  width: 42%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  border: 1px solid #653fa9;
+}
+
+#buttonCode {
+  display: block;
+  color: white;
+  width: 85px;
+  border-radius: 8px;
+  height: 35px;
+  background: #429a37;
+  position: relative;
+  top: 30px;
+  left: 50%;
+  margin-bottom: 30px;
+  transform: translate(-50%, -50%);
+  border: 0;
+}
+
+div > div > p {
+  color: white;
+}

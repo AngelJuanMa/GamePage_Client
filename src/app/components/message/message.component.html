@@ -39,7 +39,10 @@
       <p *ngFor="let messageArr of messagesArr" [ngClass]="{
       'identity': identity.nick == messageArr.emitter.nick,
       'friend': identity.nick != messageArr.emitter.nick
-      }" class="message12">{{messageArr.text}} {{ (messageArr.created_at | amFromUnix) | amDateFormat:'h:mm'}}
+      }" class="message12">{{messageArr.text}}
+      <span style="color: '#a2a2a2'">
+        {{ (messageArr.created_at | amFromUnix) | amDateFormat:'h:mm'}}
+      </span>
         <span *ngIf="identity.nick == messageArr.emitter.nick">
           <i *ngIf="messageArr.viewed === 'true' ;else viewed" class="fas fa-check-double viewed"></i>
           <ng-template #viewed><i class="fas fa-check noviewed"></i></ng-template>

@@ -7,7 +7,7 @@ import { GLOBAL } from '../../services/global';
 @Component({
   selector: 'user-edit',
   templateUrl: './user-edit.component.html',
-  styleUrls: ['../pride/pride.style.css'],
+  styleUrls: ['../message/message.style.css'],
   providers: [UserService],
 })
 export class UserEditComponent {

@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { UserService } from './services/user.service';
 import { GLOBAL } from './services/global';
 import io from 'socket.io-client';
+import { User } from './models/user';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ import io from 'socket.io-client';
 export class AppComponent implements OnInit, DoCheck {
   public title: string;
   public identity;
+  public user: User;
   public open_box: boolean;
   public open_user: boolean;
   public open_clan: boolean;
@@ -20,13 +22,14 @@ export class AppComponent implements OnInit, DoCheck {
   public url: string;
   public ranking;
   public gp;
+  public token;
   public max;
   public percent;
+  public href: boolean;
   @ViewChild('skin') skin;
   private userIo: any;
   @ViewChild('clan') clan;
   @ViewChild('friends') friends;
-  @ViewChild('user') user;
   @ViewChild('edit') edit;
 
   datoHijo: string = 'Sin datos';
@@ -39,6 +42,8 @@ export class AppComponent implements OnInit, DoCheck {
     this.userIo = io('http://localhost:3000');
     this.title = 'RedJuegos';
     this.url = GLOBAL.url;
+    this.user = this._userService.getIdentity();
+    this.token = this._userService.getToken();
     this.open_box = false;
     this.open_user = false;
     this.open_clan = false;
@@ -48,6 +53,8 @@ export class AppComponent implements OnInit, DoCheck {
   ngOnInit() {
     this.identity = this._userService.getIdentity();
     this.nivel(this.identity);
+    /* href return true o false */
+    this.href = (window.location.href).includes('sala');
   }
 
   ngAfterViewInit() {
@@ -100,10 +107,24 @@ export class AppComponent implements OnInit, DoCheck {
   }
 
   logout() {
-    this.userIo.emit('userDisconnect', this.identity._id);
-    localStorage.clear();
-    this.identity = null;
-    this._router.navigate(['/']);
+    if(this.href === true){
+      console.log(this.token)
+      this._userService.returnToLobby(this.user).subscribe(
+        (response) => {
+          console.log(response);
+          this._router.navigate(['/lobby']);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    }else{
+      this.userIo.emit('userDisconnect', this.identity._id);
+      localStorage.clear();
+      this.identity = null;
+      this._router.navigate(['/']);
+    }
+
   }
 
   openPopup_box(enter, leave) {
@@ -119,24 +140,6 @@ export class AppComponent implements OnInit, DoCheck {
       this.clearColor(1);
 
       this.open_user = false;
-      this.open_clan = false;
-      this.open_update = false;
-    }
-  }
-  openPopup_user(enter, leave) {
-    if (leave && !this.open_user)
-      this.user.nativeElement.style.color = 'rgb(209, 209, 209)';
-
-    if (enter) this.user.nativeElement.style.color = 'rgb(148, 148, 148)';
-    else if (!leave) {
-      this.open_user = this.open_user == false ? true : false;
-
-      if (this.open_user)
-        this.user.nativeElement.style.color = 'rgb(148, 148, 148)';
-      else this.user.nativeElement.style.color = 'rgb(209, 209, 209)';
-      this.clearColor(2);
-
-      this.open_box = false;
       this.open_clan = false;
       this.open_update = false;
     }
@@ -179,7 +182,6 @@ export class AppComponent implements OnInit, DoCheck {
   clearColor(data) {
     if (data !== 1)
       this.friends.nativeElement.style.color = 'rgb(209, 209, 209)';
-    if (data !== 2) this.user.nativeElement.style.color = 'rgb(209, 209, 209)';
     if (data !== 3) this.clan.nativeElement.style.color = 'rgb(209, 209, 209)';
     if (data !== 4) this.edit.nativeElement.style.color = 'rgb(209, 209, 209)';
   }

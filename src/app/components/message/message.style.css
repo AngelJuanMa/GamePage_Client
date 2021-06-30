@@ -18,9 +18,8 @@
 #popupBody_Delete {
   z-index: 1001;
   background-color: rgba(0, 0, 0, 0.78);
-  width: 46%;
+  width: 19%;
   padding: 2%;
-  top: 0;
   left: 0;
   right: 0;
   border-radius: 15px;
@@ -55,7 +54,6 @@
 #popupBody,
 #popupBody-request,
 #popupBody-user {
-
   position: absolute;
   top: 50%;
   left: 50%;
@@ -101,45 +99,38 @@
 }
 
 .friends .buttonFriend {
-  border-top: none;
-  border-right: 1px solid rgba(128, 128, 128, 0.637);
-  border-bottom: 1px solid rgba(128, 128, 128, 0.637);
-  border-left: 1px solid rgba(128, 128, 128, 0.637);
+  border: none;
   background: none;
   width: 80%;
   color: white;
+  text-align: left;
+  padding-left: 18px;
 }
 .friendDelete {
-  border-top: 1px solid rgba(128, 128, 128, 0.637);
-  border-right: 1px solid rgba(128, 128, 128, 0.637);
-  border-bottom: 1px solid rgba(128, 128, 128, 0.637);
-  border-left: none;
   background: none;
   width: 20%;
+  border: none;
+  font-weight: bold;
   color: red;
-}
-.friends #first button:first-child {
-  border-top: 1px solid rgba(128, 128, 128, 0.637) !important;
 }
 .form-add {
   height: 15%;
 }
 .form-add .button-box {
-  border-radius: 0 0 10px 0;
   width: 30%;
   background: none;
   color: rgb(41, 199, 67);
-  border: 1px solid rgba(41, 199, 67, 0.657);
+  border: none;
 }
 .form-add .button-box:hover {
   color: rgb(35, 129, 50);
-  border: 1px solid rgb(35, 129, 50, 0.657);
 }
 .form-add .input-box {
-  border-radius: 0 0 0 10px;
+  padding-left: 17px;
+  padding-bottom: 13px;
+  border: none;
   background: none;
   color: white;
-  border: 1px rgb(93, 92, 92) solid;
   width: 70%;
   height: 28px;
 }
@@ -210,6 +201,7 @@
 
 #friends,
 #delete {
+  margin-bottom: 20px;
   color: white;
   width: 100%;
   background: none;
@@ -306,15 +298,15 @@
 #deleteFriend {
   width: 50%;
   background: none;
-  color: white;
-  border: 2px solid #ab3f3f;
+  color: #ab3f3f;
+  border: none;
 }
 
 #cancel {
   width: 50%;
-  border: 2px solid #1f8d98;
   background: none;
-  color: white;
+  color: #29c743;
+  border: none;
 }
 
 .noviewed {
